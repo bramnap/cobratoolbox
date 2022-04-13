@@ -77,7 +77,9 @@ if isempty(mapP)
             error(['modPath (' modPath ') does not exist.']);
         end
     end
-
+    
+    abunFilePath = abundanceFileChecks(abunFilePath, resPath);
+    
     abundance = table2cell(readtable(abunFilePath));
 
     % The number of microbeNames, their names, the number of samples and their identifiers
