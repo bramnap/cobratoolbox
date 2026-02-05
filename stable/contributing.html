@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>How to contribute &mdash; The COBRA Toolbox</title>
@@ -14,16 +15,12 @@
   
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="_static/img/apple-touch-icon.png">
-  
   
     <link rel="icon" type="image/png" sizes="32x32" href="_static/img/favicon-32x32.png">
   
   
     <link rel="icon" type="image/png" sizes="16x16" href="_static/img/favicon-16x16.png">
   
-  
-    <link rel="mask-icon" href="_static/img/safari-pinned-tab.svg" color="#5bbad5">
   
   
     <link rel="manifest" href="_static/json/manifest.json">
@@ -57,14 +54,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/cobra.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="The COBRA Toolbox" href="index.html"/>
-        <link rel="next" title="How to cite" href="cite.html"/>
-        <link rel="prev" title="Tutorials" href="tutorials/index.html"/> 
+        <link rel="next" title="Development Plan" href="plan.html"/>
+        <link rel="prev" title="FAQ" href="faq.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,14 +83,15 @@
           
 
           
-            <a href="index.html">
+            <a href="index.html" class="icon icon-home"> The COBRA Toolbox
           
 
           
-            
-            <img src="https://king.nuigalway.ie/cobratoolbox/img/cobratoolbox_logo_transparent.png" class="logo" alt="cobratoolbox logo" />
+            <img src="/cobratoolbox/stable/_static/img/logo.png" class="logo" alt="cobratoolbox logo" />
           
           </a>
+
+              
           <h1>The COBRA Toolbox</h1>
 
           
@@ -119,14 +121,13 @@
 			    enabled: true
 		    }
 		},
-
-    	template: {
+	template: {
 	    	type: "custom",
 		    method: function(value, item) {
-                return "<span><a href='search.html?q=" + item.name + "&check_keywords=yes&area=default'>" + value + "</a>" + "<a href='_static/../" + item.website_url + "' ><img src='_static/link.svg'/></a></span>";
+                return "<span><a href='_static/../" + item.website_url + "' >" + value + "</a>" + "<a href='_static/../" + item.website_url + "' ><img src='_static/link.svg'/></a></span>";
 		    }
 	    },
-
+		
 		theme: "square"
 
 	};
@@ -146,11 +147,39 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
               </ul>
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using the Toolbox</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submodules/index.html">Submodules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">How to contribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-contribute-to-the-cobra-toolbox">How to contribute to the COBRA Toolbox</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview-of-the-contribution-workflow">1. Overview of the contribution workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fork-the-cobra-toolbox-repository">2. Fork the COBRA Toolbox repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clone-your-fork-locally">3. Clone your fork locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-your-code-to-the-correct-folder-in-src">4. Add your code to the correct folder in <code class="docutils literal notranslate"><span class="pre">src</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-a-test-for-every-new-code-module">5. Add a test for every new code module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commit-and-push-your-changes">6. Commit and push your changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#open-a-pull-request">7. Open a pull request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#address-review-comments">8. Address review comments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#contribute-using-matlab-devtools">Contribute using MATLAB.devTools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unified-cobra-model-field-specification">Unified COBRA model field specification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fields-in-the-model-structure">Fields in the model structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model-specific-fields">Model Specific Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#field-support">Field Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-fields">Additional fields</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#guide-for-writing-a-test">Guide for writing a test</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prepare-the-test-define-requirements">Prepare the test (define requirements)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-if-an-output-is-correct">Test if an output is correct</a></li>
@@ -183,13 +212,16 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="plan.html">Development Plan</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Information</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="cite.html">How to cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citations.html">Citations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funding.html">Funding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plan.html">Development Plan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 </ul>
 
           
@@ -211,81 +243,272 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="contents.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>How to contribute</li>
-    
-    
+      <li><a href="contents.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">How to contribute</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="how-to-contribute">
-<h1>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h1>
-<p><img src="https://king.nuigalway.ie/cobratoolbox/img/thumbsUP.png" height="20px" width="20px" alt="thumbsup"> <img src="https://king.nuigalway.ie/cobratoolbox/img/tada.png" height="20px" width="20px" alt="tada"> First off, thanks for taking the time to contribute to <a class="reference external" href="https://github.com/opencobra/cobratoolbox">The COBRA
-Toolbox</a>! <img src="https://king.nuigalway.ie/cobratoolbox/img/tada.png" height="20px" width="20px" alt="tada"> <img src="https://king.nuigalway.ie/cobratoolbox/img/thumbsUP.png" height="20px" width="20px" alt="thumbsup"></p>
+  <section id="how-to-contribute">
+<h1>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this heading">¶</a></h1>
+<section id="how-to-contribute-to-the-cobra-toolbox">
+<h2>How to contribute to the COBRA Toolbox<a class="headerlink" href="#how-to-contribute-to-the-cobra-toolbox" title="Permalink to this heading">¶</a></h2>
+<p>This guide explains, step by step, how to contribute code to the COBRA Toolbox:
+how to fork the repository, work on your changes locally, place your code in the
+correct folder inside <code class="docutils literal notranslate"><span class="pre">src</span></code>, add tests, and open a pull request (PR).</p>
+<section id="overview-of-the-contribution-workflow">
+<h3>1. Overview of the contribution workflow<a class="headerlink" href="#overview-of-the-contribution-workflow" title="Permalink to this heading">¶</a></h3>
+<p>The typical workflow for contributing is:</p>
+<ol class="arabic simple">
+<li><p>Fork the COBRA Toolbox repository on GitHub.</p></li>
+<li><p>Clone your fork to your local machine.</p></li>
+<li><p>Add your code to the appropriate subfolder of <code class="docutils literal notranslate"><span class="pre">src</span></code>.</p></li>
+<li><p>Add tests for your new code (see <a class="reference internal" href="guides/testGuide.html#testguide"><span class="std std-ref">Guide for writing a test</span></a>).</p></li>
+<li><p>Commit your changes locally.</p></li>
+<li><p>Push your changes to your fork on GitHub.</p></li>
+<li><p>Open a pull request to the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch of the COBRA Toolbox repository.</p></li>
+<li><p>Address any review comments from the maintainers.</p></li>
+</ol>
+<p>The following sections describe each step in more detail.</p>
+</section>
+<section id="fork-the-cobra-toolbox-repository">
+<h3>2. Fork the COBRA Toolbox repository<a class="headerlink" href="#fork-the-cobra-toolbox-repository" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Go to the main COBRA Toolbox repository on GitHub:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/opencobra/cobratoolbox">https://github.com/opencobra/cobratoolbox</a></p></li>
+</ul>
+</li>
+<li><p>In the top right corner, click the <strong>Fork</strong> button.</p></li>
+<li><p>Choose your GitHub account as the destination.</p></li>
+<li><p>GitHub will create a copy of the COBRA Toolbox under your account, for example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;your-username&gt;/cobratoolbox</span></code></p></li>
+</ul>
+</li>
+</ol>
+<p>All your changes will be pushed to this fork.</p>
+</section>
+<section id="clone-your-fork-locally">
+<h3>3. Clone your fork locally<a class="headerlink" href="#clone-your-fork-locally" title="Permalink to this heading">¶</a></h3>
+<p>To work on the code, clone your fork to your local machine.</p>
+<ol class="arabic">
+<li><p>Open a terminal.</p></li>
+<li><p>Run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/&lt;your-username&gt;/cobratoolbox.git
+<span class="nb">cd</span><span class="w"> </span>cobratoolbox
+</pre></div>
+</div>
+</li>
+<li><p>Add the original repository as an <code class="docutils literal notranslate"><span class="pre">upstream</span></code> remote so that you can pull in future updates:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/opencobra/cobratoolbox.git
+git<span class="w"> </span>fetch<span class="w"> </span>upstream
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="add-your-code-to-the-correct-folder-in-src">
+<h3>4. Add your code to the correct folder in <code class="docutils literal notranslate"><span class="pre">src</span></code><a class="headerlink" href="#add-your-code-to-the-correct-folder-in-src" title="Permalink to this heading">¶</a></h3>
+<p>All new COBRA Toolbox code should be added under the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder. The main
+subfolders under <code class="docutils literal notranslate"><span class="pre">src</span></code> are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">analysis</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataIntegration</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">design</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reconstruction</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">visualization</span></code></p></li>
+</ul>
+<p>It is recommended to create a <strong>new subfolder</strong> inside the most appropriate
+parent folder for your project. This keeps the toolbox organised and makes it
+easier for others to navigate the code.</p>
+<p>Below is guidance on when to use each folder.</p>
+<p><strong>4.1. src/analysis</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">analysis</span></code> for methods that analyse existing metabolic models. Examples:</p>
+<ul class="simple">
+<li><p>Flux balance analysis, flux variability analysis, phenotype simulations.</p></li>
+<li><p>Comparison pipelines, performance profiling.</p></li>
+<li><p>Statistical or diagnostic analyses.</p></li>
+</ul>
+<p>Suggested structure:
+<code class="docutils literal notranslate"><span class="pre">src/analysis/myNewAnalysisTool/</span></code></p>
+<p><strong>4.2. src/base</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">base</span></code> for shared utilities and core methods needed across the toolbox.
+Examples include:</p>
+<ul class="simple">
+<li><p>General-purpose helper functions.</p></li>
+<li><p>IO utilities used by multiple modules.</p></li>
+<li><p>Shared mathematical or solver-related helper functions.</p></li>
+</ul>
+<p>Suggested structure:
+<code class="docutils literal notranslate"><span class="pre">src/base/myUtilityFunctions/</span></code></p>
+<p><strong>4.3. src/dataIntegration</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">dataIntegration</span></code> for code that integrates omics or experimental data with
+a model. Examples:</p>
+<ul class="simple">
+<li><p>Transcriptomics-, proteomics-, or metabolomics-based integration.</p></li>
+<li><p>Condition-specific model building.</p></li>
+<li><p>Data-driven constraint generation.</p></li>
+</ul>
+<p>Suggested structure:
+<code class="docutils literal notranslate"><span class="pre">src/dataIntegration/myIntegrationPipeline/</span></code></p>
+<p><strong>4.4. src/design</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">design</span></code> for algorithms that propose modifications or interventions.
+Examples:</p>
+<ul class="simple">
+<li><p>Strain design algorithms.</p></li>
+<li><p>Knockout or overexpression strategies.</p></li>
+<li><p>Intervention ranking, phenotype optimisation.</p></li>
+</ul>
+<p>Suggested structure:
+<code class="docutils literal notranslate"><span class="pre">src/design/myDesignAlgorithm/</span></code></p>
+<p><strong>4.5. src/reconstruction</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">reconstruction</span></code> for tools that construct, curate or update metabolic
+models. Examples:</p>
+<ul class="simple">
+<li><p>Model reconstruction pipelines.</p></li>
+<li><p>Gap filling algorithms.</p></li>
+<li><p>Model merging and quality control tools.</p></li>
+</ul>
+<p>Suggested structure:
+<code class="docutils literal notranslate"><span class="pre">src/reconstruction/myReconstructionPipeline/</span></code></p>
+<p><strong>4.6. src/visualization</strong></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">visualization</span></code> for tools that generate plots, diagrams or graphical
+summaries. Examples:</p>
+<ul class="simple">
+<li><p>Flux distribution plots.</p></li>
+<li><p>Network diagrams.</p></li>
+<li><p>Pathway visualisation tools.</p></li>
+</ul>
+<p>Suggested structure:
+<code class="docutils literal notranslate"><span class="pre">src/visualization/myVisualisationTools/</span></code></p>
+</section>
+<section id="add-a-test-for-every-new-code-module">
+<h3>5. Add a test for every new code module<a class="headerlink" href="#add-a-test-for-every-new-code-module" title="Permalink to this heading">¶</a></h3>
+<p>Every contribution must include a corresponding <strong>test</strong>. This ensures that new
+code is validated and remains stable.</p>
+<p>Your test should:</p>
+<ul class="simple">
+<li><p>Cover the main functions of your addition.</p></li>
+<li><p>Run without errors in a clean installation.</p></li>
+<li><p>Include checks for both expected behaviour and edge-case failures when possible.</p></li>
+</ul>
+<p>For more information on writing tests, refer to:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="guides/testGuide.html#testguide"><span class="std std-ref">Guide for writing a test</span></a></p></li>
+</ul>
+</section>
+<section id="commit-and-push-your-changes">
+<h3>6. Commit and push your changes<a class="headerlink" href="#commit-and-push-your-changes" title="Permalink to this heading">¶</a></h3>
+<p>Once your code and tests are ready, commit your work.</p>
+<ol class="arabic">
+<li><p>Check which files have changed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</li>
+<li><p>Stage your new code and tests:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>src/<span class="w"> </span>path/to/your/files
+git<span class="w"> </span>add<span class="w"> </span>test/<span class="w"> </span>path/to/your/tests
+</pre></div>
+</div>
+</li>
+<li><p>Commit your changes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add new analysis tool for XYZ with tests&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Push your changes to your fork:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>develop
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="open-a-pull-request">
+<h3>7. Open a pull request<a class="headerlink" href="#open-a-pull-request" title="Permalink to this heading">¶</a></h3>
+<p>Once your changes are pushed, open a pull request on GitHub.</p>
+<ol class="arabic simple">
+<li><p>Visit your fork:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;your-username&gt;/cobratoolbox</span></code></p></li>
+</ul>
+</li>
+<li><p>Click <strong>Compare &amp; pull request</strong>.</p></li>
+<li><p>Ensure the PR target is:</p>
+<ul class="simple">
+<li><p>Base repository: <code class="docutils literal notranslate"><span class="pre">opencobra/cobratoolbox</span></code></p></li>
+<li><p>Base branch: <code class="docutils literal notranslate"><span class="pre">develop</span></code></p></li>
+<li><p>Head repository: your fork</p></li>
+<li><p>Head branch: <code class="docutils literal notranslate"><span class="pre">develop</span></code> (or whichever branch you pushed to)</p></li>
+</ul>
+</li>
+<li><p>Describe:</p>
+<ul class="simple">
+<li><p>What your contribution does.</p></li>
+<li><p>Where the code lives in <code class="docutils literal notranslate"><span class="pre">src</span></code>.</p></li>
+<li><p>What tests were added.</p></li>
+<li><p>Any notes for reviewers.</p></li>
+</ul>
+</li>
+<li><p>Submit the pull request.</p></li>
+</ol>
+</section>
+<section id="address-review-comments">
+<h3>8. Address review comments<a class="headerlink" href="#address-review-comments" title="Permalink to this heading">¶</a></h3>
+<p>Maintainers may request revisions. This is normal.</p>
+<ol class="arabic">
+<li><p>Make the changes locally.</p></li>
+<li><p>Commit and push them again:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;Address review comments&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>develop
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Your pull request will update automatically.</p>
+<p>Once approved, it will be merged into the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch of the COBRA Toolbox.</p>
+</section>
+</section>
+<section id="contribute-using-matlab-devtools">
+<h2>Contribute using MATLAB.devTools<a class="headerlink" href="#contribute-using-matlab-devtools" title="Permalink to this heading">¶</a></h2>
+<p>In order to lower the technological barrier to the use of the popular software development tool git, we have developed MATLAB.devTools, a new user-friendly software extension that enables the submission of new COBRA toolbox functions and tutorials.</p>
 <p align="center">
 <img src="https://cdn.jsdelivr.net/gh/opencobra/MATLAB.devTools@e735bd91310e8ef10fab4d3c21833a85bf4b8159/docs/source/_static/img/logo_devTools.png" height="120px" alt="devTools"/>
 </p><p>You can install the
 <a class="reference external" href="https://github.com/opencobra/MATLAB.devTools">MATLAB.devTools</a> from
 within MATLAB by typing:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">installDevTools</span><span class="p">()</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">installDevTools</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><img src="https://king.nuigalway.ie/cobratoolbox/img/bulb.png" height="20px" width="20px" alt="bulb"> Check out the <a class="reference external" href="https://github.com/opencobra/MATLAB.devTools">MATLAB.devTools</a> - and contribute the smart
-way! The <strong>official documentation</strong> is <a class="reference external" href="https://opencobra.github.com/MATLAB.devTools">here</a>.</p>
-<p><img src="https://king.nuigalway.ie/cobratoolbox/img/thumbsUP.png" height="20px" width="20px" alt="thumbsup"> Contribute to the <code class="docutils literal notranslate"><span class="pre">opencobra/cobratoolbox</span></code> repository by following <a class="reference external" href="https://opencobra.github.io/MATLAB.devTools/stable/contribute.html#the-cobra-toolbox">these
-instructions</a>:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">contribute</span><span class="p">(</span><span class="s">&#39;opencobra/cobratoolbox&#39;</span><span class="p">);</span>
+<p>💡 Check out <a class="reference external" href="https://github.com/opencobra/MATLAB.devTools">MATLAB.devTools</a> – and contribute the smart way!
+The <strong>official documentation</strong> is <a class="reference external" href="https://opencobra.github.io/MATLAB.devTools/">here</a>.</p>
+<p>👉 Contribute to the <code class="docutils literal notranslate"><span class="pre">opencobra/cobratoolbox</span></code> repository by following <a class="reference external" href="https://opencobra.github.io/MATLAB.devTools/stable/contribute.html#the-cobra-toolbox">these instructions</a>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">contribute</span><span class="p">(</span><span class="s">&#39;opencobra/cobratoolbox&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><img src="https://king.nuigalway.ie/cobratoolbox/img/thumbsUP.png" height="20px" width="20px" alt="thumbsup"> Contribute to the <code class="docutils literal notranslate"><span class="pre">opencobra/COBRA.tutorials</span></code> repository by following <a class="reference external" href="https://opencobra.github.io/MATLAB.devTools/stable/contribute.html#cobra-tutorials">these
+<p>👉 Contribute to the <code class="docutils literal notranslate"><span class="pre">opencobra/COBRA.tutorials</span></code> repository by following <a class="reference external" href="https://opencobra.github.io/MATLAB.devTools/stable/contribute.html#cobra-tutorials">these
 instructions</a>:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">contribute</span><span class="p">(</span><span class="s">&#39;opencobra/COBRA.tutorials&#39;</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">contribute</span><span class="p">(</span><span class="s">&#39;opencobra/COBRA.tutorials&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Please follow the <a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/styleGuide.html">Style
-Guide</a>.</li>
-<li>More information on writing a <strong>test</strong> is
+<li><p>Please follow the <a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/styleGuide.html">Style
+Guide</a>.</p></li>
+<li><p>More information on writing a <strong>test</strong> is
 <a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/testGuide.html">here</a>
 and a template is
-<a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/testTemplate.html">here</a>.</li>
-<li>More information on formatting the documentation is
-<a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/documentationGuide.html">here</a></li>
-<li>A guide for reporting an <strong>issue</strong> is <a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/issueGuide.html">here</a>.</li>
+<a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/testTemplate.html">here</a>.</p></li>
+<li><p>More information on formatting the documentation is
+<a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/documentationGuide.html">here</a></p></li>
+<li><p>A guide for reporting an <strong>issue</strong> is <a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/issueGuide.html">here</a>.</p></li>
 </ul>
 <p>If you want to use <code class="docutils literal notranslate"><span class="pre">git</span></code> via the command line interface and need help,
 this
@@ -293,18 +516,535 @@ this
 or the official <a class="reference external" href="https://help.github.com/articles/creating-a-pull-request/">GitHub
 guide</a>
 come in handy.</p>
-<div class="section" id="guide-for-writing-a-test">
-<span id="testguide"></span><h2>Guide for writing a test<a class="headerlink" href="#guide-for-writing-a-test" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="unified-cobra-model-field-specification">
+<h2>Unified COBRA model field specification<a class="headerlink" href="#unified-cobra-model-field-specification" title="Permalink to this heading">¶</a></h2>
+<p>To support consistent handling of genome-scale metabolic models across the COBRA Toolbox ecosystem, a unified model field structure has been established. This shared specification ensures that models originating from different repositories, formats or reconstruction pipelines can be interpreted reliably by toolbox functions. By adhering to a common set of field names, dimensions and semantics, users and developers gain full interoperability, improved compatibility with input and output routines, and predictable behaviour when applying analysis methods. The definitions below describe the agreed standard for COBRA models and serve as the reference for constructing, validating and extending model structures.</p>
+<section id="fields-in-the-model-structure">
+<h3>Fields in the model structure<a class="headerlink" href="#fields-in-the-model-structure" title="Permalink to this heading">¶</a></h3>
+<p>The following fields are defined in the COBRA Toolbox. If a field is included in a model, it should match the definition and dimensions listed below.
+The dimensions refer to m (metabolites), n (reactions), g (genes) and c (compartments).
+Singular fields are explicitly marked as <code class="docutils literal notranslate"><span class="pre">scalar</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code> or <code class="docutils literal notranslate"><span class="pre">struct</span></code>.</p>
+<table class="wide-table docutils align-left">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Field Name</strong></p></th>
+<th class="head"><p><strong>Dimension</strong></p></th>
+<th class="head"><p><strong>Field Type</strong></p></th>
+<th class="head"><p><strong>Field Description</strong></p></th>
+<th class="head"><p><strong>COBRA Core Field</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.S</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">n</span></code></p></td>
+<td><p>Sparse or Full Matrix of Double</p></td>
+<td><p>Stoichiometric matrix</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.mets</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Metabolite identifiers</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.b</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Doubles</p></td>
+<td><p>Right hand side values for metabolite constraints</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.csense</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Chars</p></td>
+<td><p>Constraint senses (E, L, G)</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxns</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Reaction identifiers</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.lb</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Doubles</p></td>
+<td><p>Lower bounds</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.ub</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Doubles</p></td>
+<td><p>Upper bounds</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.c</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Doubles</p></td>
+<td><p>Objective coefficients</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.osenseStr</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>String</p></td>
+<td><p>Objective sense: <code class="docutils literal notranslate"><span class="pre">max</span></code> or <code class="docutils literal notranslate"><span class="pre">min</span></code></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.genes</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Gene identifiers</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.metNames</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Metabolite names</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.grRules</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Readable gene protein reaction rules</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnNames</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Reaction names</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.rules</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Evaluatable GPR rules</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.geneNames</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Gene names</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.compNames</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Compartment names</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.comps</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Compartment symbols</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.proteinNames</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Protein names</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.proteins</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Proteins associated with genes</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.metCharges</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Double</p></td>
+<td><p>Metabolite charges</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.metFormulas</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Elemental formulas</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.metSmiles</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>SMILES strings</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.metNotes</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Notes for metabolites</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.metHMDBID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>HMDB identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.metInChIString</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>InChI strings</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.metKEGGID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>KEGG metabolite identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.metChEBIID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>ChEBI identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.metPubChemID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>PubChem identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.metMetaNetXID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>MetaNetX metabolite identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.metSEEDID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>SEED metabolite identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.metBiGGID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>BiGG metabolite identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.metBioCycID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>BioCyc metabolite identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.metEnviPathID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>enviPath identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.metLIPIDMAPSID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>LipidMaps identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.metReactomeID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Reactome metabolite identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.metSABIORKID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>SABIO RK metabolite identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.metSLMID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>SwissLipids identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.metSBOTerms</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>SBO terms for metabolites</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.geneEntrezID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Entrez gene identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.geneRefSeqID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>RefSeq gene identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.geneUniprotID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>UniProt identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.geneEcoGeneID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>EcoGene identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.geneKEGGID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>KEGG gene identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.geneHPRDID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>HPRD identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.geneASAPID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>ASAP identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.geneCCDSID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>CCDS identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.geneNCBIProteinID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>NCBI protein identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnGeneMat</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">g</span></code></p></td>
+<td><p>Sparse or Full Matrix</p></td>
+<td><p>Reaction gene incidence matrix</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnConfidenceScores</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Double</p></td>
+<td><p>Reaction confidence scores</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnNotes</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Notes on reactions</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnECNumbers</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>EC numbers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnReferences</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Literature references</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnKEGGID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>KEGG reaction identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnKEGGPathways</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>KEGG pathway mappings</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnMetaNetXID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>MetaNetX reaction identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnBRENDAID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>BRENDA reaction identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnBioCycID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>BioCyc reaction identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnReactomeID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Reactome reaction identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnSABIORKID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>SABIO RK reaction identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnSEEDID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>SEED reaction identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnRheaID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Rhea identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnBiGGID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>BiGG identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.rxnSBOTerms</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>SBO terms for reactions</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.subSystems</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Cell Arrays</p></td>
+<td><p>Subsystem annotations</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.description</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>String</p></td>
+<td><p>General description of the model</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.modelVersion</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Struct</p></td>
+<td><p>Version metadata</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.modelName</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>String</p></td>
+<td><p>Descriptive name</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.modelID</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>String</p></td>
+<td><p>Short identifier</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.E</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">evars</span></code></p></td>
+<td><p>Sparse or Full Matrix</p></td>
+<td><p>Extra variable constraint matrix</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.evarlb</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">evars</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Double</p></td>
+<td><p>Lower bounds of extra variables</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.evarub</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">evars</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Double</p></td>
+<td><p>Upper bounds of extra variables</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.evarc</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">evars</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Double</p></td>
+<td><p>Objective coefficients for extra variables</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.evars</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">evars</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Extra variable identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.evarNames</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">evars</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Extra variable names</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.C</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ctrs</span> <span class="pre">x</span> <span class="pre">n</span></code></p></td>
+<td><p>Sparse or Full Matrix</p></td>
+<td><p>Additional constraints matrix</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.ctrs</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ctrs</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Constraint identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.ctrNames</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ctrs</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Cell Array of Strings</p></td>
+<td><p>Constraint names</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.d</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ctrs</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Double</p></td>
+<td><p>Right-hand side values for constraints</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model.dsense</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ctrs</span> <span class="pre">x</span> <span class="pre">1</span></code></p></td>
+<td><p>Column Vector of Chars</p></td>
+<td><p>Constraint senses</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model.D</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ctrs</span> <span class="pre">x</span> <span class="pre">evars</span></code></p></td>
+<td><p>Sparse or Full Matrix</p></td>
+<td><p>Coupling terms between extra variables and constraints</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div style="clear: both; margin-bottom: 2em;"></div></section>
+<section id="model-specific-fields">
+<h3>Model Specific Fields<a class="headerlink" href="#model-specific-fields" title="Permalink to this heading">¶</a></h3>
+<p>Some models may contain additional fields that are not part of the COBRA Toolbox standard. Such fields are not used by core functions, and using toolbox operations may cause inconsistencies if these fields depend on reaction or metabolite counts.</p>
+</section>
+<section id="field-support">
+<h3>Field Support<a class="headerlink" href="#field-support" title="Permalink to this heading">¶</a></h3>
+<p>All fields listed above are supported by COBRA Toolbox methods. Toolbox functions will preserve consistency, but manual editing of the model structure may not.
+Use <code class="docutils literal notranslate"><span class="pre">verifyModel(model)</span></code> to check whether a model meets the COBRA Toolbox structural requirements.</p>
+</section>
+<section id="additional-fields">
+<h3>Additional fields<a class="headerlink" href="#additional-fields" title="Permalink to this heading">¶</a></h3>
+<p>Fields beginning with <code class="docutils literal notranslate"><span class="pre">met</span></code>, <code class="docutils literal notranslate"><span class="pre">rxn</span></code>, <code class="docutils literal notranslate"><span class="pre">comp</span></code>, <code class="docutils literal notranslate"><span class="pre">protein</span></code> or <code class="docutils literal notranslate"><span class="pre">gene</span></code> that are not defined above are treated as annotation fields.
+Input and output functions will attempt to map these to identifiers in registered databases where possible.</p>
+</section>
+</section>
+<section id="guide-for-writing-a-test">
+<span id="testguide"></span><h2>Guide for writing a test<a class="headerlink" href="#guide-for-writing-a-test" title="Permalink to this heading">¶</a></h2>
 <p>Before starting to write a test on your own, it might be instructive to
 follow common test practices in <code class="docutils literal notranslate"><span class="pre">/test/verifiedTests</span></code>. A style guide
 on how to write tests is given
 <a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/styleGuide.html">here</a>.</p>
-<div class="section" id="prepare-the-test-define-requirements">
-<h3>Prepare the test (define requirements)<a class="headerlink" href="#prepare-the-test-define-requirements" title="Permalink to this headline">¶</a></h3>
+<section id="prepare-the-test-define-requirements">
+<h3>Prepare the test (define requirements)<a class="headerlink" href="#prepare-the-test-define-requirements" title="Permalink to this heading">¶</a></h3>
 <p>There are functions that need a specific solver or that can only be run
 if a certain toolbox is installed on a system. To address these, you
 should specify the respective requirements by using</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span> <span class="p">=</span> <span class="n">prepareTest</span><span class="p">(</span><span class="n">requirements</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">prepareTest</span><span class="p">(</span><span class="n">requirements</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If successfull and all requirements are fulfilled, <code class="docutils literal notranslate"><span class="pre">prepareTest</span></code> will
@@ -318,7 +1058,7 @@ contain at most one solver.</p>
 <p class="rubric">Example A: Require Windows for the test</p>
 <p>The same works with <code class="docutils literal notranslate"><span class="pre">needsMac</span></code>, <code class="docutils literal notranslate"><span class="pre">needsLinux</span></code> and <code class="docutils literal notranslate"><span class="pre">needsUnix</span></code>
 instead of <code class="docutils literal notranslate"><span class="pre">needsWindows</span></code>.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span> <span class="p">=</span> <span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;needsWindows&#39;</span><span class="p">,</span> <span class="n">true</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;needsWindows&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
 </pre></div>
 </div>
 <p class="rubric">Example B: Require an LP solver (<code class="docutils literal notranslate"><span class="pre">needsLP</span></code>)</p>
@@ -329,14 +1069,14 @@ the <code class="docutils literal notranslate"><span class="pre">'useSolversIfAv
 solvers requested will be in the cell array. Otherwise, there will be at
 most one solver (if no solver for the problem is installed, the cell
 array is empty).</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span> <span class="p">=</span> <span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;needsLP&#39;</span><span class="p">,</span> <span class="n">true</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;needsLP&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
 </pre></div>
 </div>
 <p class="rubric">Example C: Use multiple solvers if present</p>
 <p>If multiple solvers are requested. <code class="docutils literal notranslate"><span class="pre">solvers.LP</span></code>, <code class="docutils literal notranslate"><span class="pre">solvers.MILP</span></code> etc
 will contain all those requested solvers that can solve the respective
 problem type and that are installed.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span> <span class="p">=</span> <span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;needsLP&#39;</span><span class="p">,</span> <span class="n">true</span><span class="p">,</span> <span class="s">&#39;useSolversIfAvailable&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;ibm_cplex&#39;</span><span class="p">,</span> <span class="s">&#39;gurobi&#39;</span><span class="p">});</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;needsLP&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;useSolversIfAvailable&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;ibm_cplex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;gurobi&#39;</span><span class="p">});</span>
 </pre></div>
 </div>
 <p class="rubric">Example D: Require one of a set of solvers</p>
@@ -346,7 +1086,7 @@ of which the test requires at least one to be present. This option, will
 make the test never be run with any but the solvers specified in the
 supplied list. E.g. if your test only works with <code class="docutils literal notranslate"><span class="pre">gurobi</span></code> or <code class="docutils literal notranslate"><span class="pre">mosek</span></code>
 you would call <code class="docutils literal notranslate"><span class="pre">prepareTest</span></code> as</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span> <span class="p">=</span> <span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;requireOneSolverOf&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;ibm_cplex&#39;</span><span class="p">,</span> <span class="s">&#39;gurobi&#39;</span><span class="p">})</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;requireOneSolverOf&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;ibm_cplex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;gurobi&#39;</span><span class="p">})</span>
 </pre></div>
 </div>
 <p class="rubric">Example E: Exclude a solver</p>
@@ -356,7 +1096,7 @@ might be advantageous to explicitly exclude that one solver instead of
 defining the list of possible solvers. This can be done with the
 <code class="docutils literal notranslate"><span class="pre">excludeSolvers</span> <span class="pre">parameter</span></code>. Eg. to exclude <code class="docutils literal notranslate"><span class="pre">matlab</span></code> and <code class="docutils literal notranslate"><span class="pre">lp_solve</span></code>
 you would use the following command:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span> <span class="p">=</span> <span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;excludeSolvers&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;matlab&#39;</span><span class="p">,</span> <span class="s">&#39;lp_solve&#39;</span><span class="p">})</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;excludeSolvers&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;matlab&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;lp_solve&#39;</span><span class="p">})</span>
 </pre></div>
 </div>
 <p class="rubric">Example F: Require multiple solvers</p>
@@ -364,14 +1104,14 @@ you would use the following command:</p>
 require multiple solvers for a test use the <code class="docutils literal notranslate"><span class="pre">requiredSolvers</span></code> parameters.
 E.g. if your function requires <code class="docutils literal notranslate"><span class="pre">ibm_cplex</span></code> and <code class="docutils literal notranslate"><span class="pre">gurobi</span></code> use the following
 call:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span> <span class="p">=</span> <span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;requiredSolvers&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;ibm_cplex&#39;</span><span class="p">,</span> <span class="s">&#39;gurobi&#39;</span><span class="p">})</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;requiredSolvers&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;ibm_cplex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;gurobi&#39;</span><span class="p">})</span>
 </pre></div>
 </div>
 <p class="rubric">Example G: Require a specific MATLAB toolbox</p>
 <p>The toolbox IDs are specified as those used in <code class="docutils literal notranslate"><span class="pre">license('test',</span>
 <span class="pre">'toolboxName')</span></code>.  The following example requires the statistics toolbox
 to be present.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span> <span class="p">=</span> <span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;requiredToolboxes&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;statistics_toolbox&#39;</span><span class="p">})</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solvers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;requiredToolboxes&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;statistics_toolbox&#39;</span><span class="p">})</span>
 </pre></div>
 </div>
 <p class="rubric">Example H: Multiple requirements</p>
@@ -379,75 +1119,75 @@ to be present.</p>
 test them all in the same call. To keep the code readable, first define
 the requirements and then pass them in.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% define required toolboxes</span>
-<span class="n">requiredToolboxes</span> <span class="p">=</span> <span class="p">{</span><span class="s">&#39;bioinformatics_toolbox&#39;</span><span class="p">,</span> <span class="s">&#39;optimization_toolbox&#39;</span><span class="p">};</span>
+<span class="n">requiredToolboxes</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;bioinformatics_toolbox&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;optimization_toolbox&#39;</span><span class="p">};</span>
 
 <span class="c">% define the required solvers (in this case matlab and dqqMinos)</span>
-<span class="n">requiredSolvers</span> <span class="p">=</span> <span class="p">{</span><span class="s">&#39;dqqMinos&#39;</span><span class="p">,</span> <span class="s">&#39;matlab&#39;</span><span class="p">};</span>
+<span class="n">requiredSolvers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;dqqMinos&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;matlab&#39;</span><span class="p">};</span>
 
 <span class="c">% check if the specified requirements are fullfilled (toolboxes, solvers in thhis example, a unix OS).</span>
-<span class="n">solversPkgs</span> <span class="p">=</span> <span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;requiredSolvers&#39;</span><span class="p">,</span> <span class="n">requiredSolvers</span><span class="p">,</span> <span class="s">&#39;requiredToolboxes&#39;</span><span class="p">,</span> <span class="n">requiredToolboxes</span><span class="p">,</span> <span class="s">&#39;needsUnix&#39;</span><span class="p">,</span> <span class="n">true</span><span class="p">);</span>
+<span class="n">solversPkgs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;requiredSolvers&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">requiredSolvers</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;requiredToolboxes&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">requiredToolboxes</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;needsUnix&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="test-if-an-output-is-correct">
-<h3>Test if an output is correct<a class="headerlink" href="#test-if-an-output-is-correct" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="test-if-an-output-is-correct">
+<h3>Test if an output is correct<a class="headerlink" href="#test-if-an-output-is-correct" title="Permalink to this heading">¶</a></h3>
 <p>If you want to test if the output of a function
 <code class="docutils literal notranslate"><span class="pre">[output1,</span> <span class="pre">output2]</span> <span class="pre">=</span> <span class="pre">function1(input1,</span> <span class="pre">input2)</span></code> is correct, you
 should call this function at least 4 times in your test. The argument
 <code class="docutils literal notranslate"><span class="pre">ìnput2</span></code> might be an optional input argument.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Case 1: test with 1 input and 1 output argument</span>
-<span class="n">output1</span> <span class="p">=</span> <span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">)</span>
+<span class="n">output1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">)</span>
 
 <span class="c">% Case 2: test with 1 input and 2 output arguments</span>
-<span class="p">[</span><span class="n">output1</span><span class="p">,</span> <span class="n">output2</span><span class="p">]</span> <span class="p">=</span> <span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">)</span>
+<span class="p">[</span><span class="n">output1</span><span class="p">,</span><span class="w"> </span><span class="n">output2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">)</span>
 
 <span class="c">% Case 3: test with 1 output and 2 input arguments</span>
-<span class="n">output1</span> <span class="p">=</span> <span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span> <span class="n">input2</span><span class="p">)</span>
+<span class="n">output1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="n">input2</span><span class="p">)</span>
 
 <span class="c">% Case 4: test with 2 input and 2 output arguments</span>
-<span class="p">[</span><span class="n">output1</span><span class="p">,</span> <span class="n">output2</span><span class="p">]</span> <span class="p">=</span> <span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span> <span class="n">input2</span><span class="p">)</span>
+<span class="p">[</span><span class="n">output1</span><span class="p">,</span><span class="w"> </span><span class="n">output2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="n">input2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Each of the 4 test scenarios should be followed by a test on <code class="docutils literal notranslate"><span class="pre">output1</span></code>
 and <code class="docutils literal notranslate"><span class="pre">output2</span></code>. For instance, for <code class="docutils literal notranslate"><span class="pre">Case</span> <span class="pre">4</span></code>:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Case 4: test with 2 input and 2 output arguments</span>
-<span class="p">[</span><span class="n">output1</span><span class="p">,</span> <span class="n">output2</span><span class="p">]</span> <span class="p">=</span> <span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span> <span class="n">input2</span><span class="p">)</span>
+<span class="p">[</span><span class="n">output1</span><span class="p">,</span><span class="w"> </span><span class="n">output2</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="n">input2</span><span class="p">)</span>
 
 <span class="c">% test on output1</span>
-<span class="n">assert</span><span class="p">(</span><span class="n">output1</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">);</span> <span class="c">% tol must be defined previously, e.g. tol = 1e-6;</span>
+<span class="nb">assert</span><span class="p">(</span><span class="n">output1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tol</span><span class="p">);</span><span class="w"> </span><span class="c">% tol must be defined previously, e.g. tol = 1e-6;</span>
 
 <span class="c">% test on output2</span>
-<span class="n">assert</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">output2</span> <span class="o">-</span> <span class="n">refData_output2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">);</span> <span class="c">% refData_output2 can be loaded from a file</span>
+<span class="nb">assert</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">output2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">refData_output2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tol</span><span class="p">);</span><span class="w"> </span><span class="c">% refData_output2 can be loaded from a file</span>
 </pre></div>
 </div>
 <p>The test succeeds if the argument of <code class="docutils literal notranslate"><span class="pre">assert()</span></code> yields a <code class="docutils literal notranslate"><span class="pre">true</span></code>
 logical condition.</p>
-</div>
-<div class="section" id="test-if-a-function-throws-an-error-or-warning-message">
-<h3>Test if a function throws an error or warning message<a class="headerlink" href="#test-if-a-function-throws-an-error-or-warning-message" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="test-if-a-function-throws-an-error-or-warning-message">
+<h3>Test if a function throws an error or warning message<a class="headerlink" href="#test-if-a-function-throws-an-error-or-warning-message" title="Permalink to this heading">¶</a></h3>
 <p>If you want to test whether your <code class="docutils literal notranslate"><span class="pre">function1</span></code> correctly throws an
 <strong>error</strong> message, you can test as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Case 5: test with 2 input and 1 output arguments (2nd input argument is of wrong dimension)</span>
 <span class="c">% There are two options. If a particular error message is to be tested (here, &#39;Input2 has the wrong dimension&#39;):</span>
-<span class="n">assert</span><span class="p">(</span><span class="n">verifyCobraFunctionError</span><span class="p">(</span><span class="s">&#39;function1&#39;</span><span class="p">,</span> <span class="s">&#39;inputs&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">input1</span><span class="p">,</span> <span class="n">input2</span><span class="o">&#39;</span><span class="p">},</span> <span class="s">&#39;testMessage&#39;</span><span class="p">,</span> <span class="s">&#39;Input2 has the wrong dimension&#39;</span><span class="p">));</span>
+<span class="nb">assert</span><span class="p">(</span><span class="n">verifyCobraFunctionError</span><span class="p">(</span><span class="s">&#39;function1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;inputs&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="n">input2</span><span class="o">&#39;</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;testMessage&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Input2 has the wrong dimension&#39;</span><span class="p">));</span>
 
 <span class="c">% If the aim is to test, that the function throws an error at all</span>
-<span class="n">assert</span><span class="p">(</span><span class="n">verifyCobraFunctionError</span><span class="p">(</span><span class="s">&#39;function1&#39;</span><span class="p">,</span> <span class="s">&#39;inputs&#39;</span><span class="p">,</span> <span class="p">{</span><span class="n">input1</span><span class="p">,</span> <span class="n">input2</span><span class="o">&#39;</span><span class="p">}));</span>
+<span class="nb">assert</span><span class="p">(</span><span class="n">verifyCobraFunctionError</span><span class="p">(</span><span class="s">&#39;function1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;inputs&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="n">input2</span><span class="o">&#39;</span><span class="p">}));</span>
 </pre></div>
 </div>
 <p>If you want to test whether your <code class="docutils literal notranslate"><span class="pre">function1</span></code> correctly throws a
 <strong>warning</strong> message, you can test as follows:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">warning</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">,</span> <span class="s">&#39;all&#39;</span><span class="p">)</span>
-    <span class="n">output1</span> <span class="p">=</span> <span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span> <span class="n">input2</span><span class="o">&#39;</span><span class="p">);</span>
-    <span class="n">assert</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">lastwarn</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">warning</span><span class="p">(</span><span class="s">&#39;on&#39;</span><span class="p">,</span> <span class="s">&#39;all&#39;</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">warning</span><span class="p">(</span><span class="s">&#39;off&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;all&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">output1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">function1</span><span class="p">(</span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="n">input2</span><span class="o">&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">assert</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="nb">lastwarn</span><span class="p">())</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">warning</span><span class="p">(</span><span class="s">&#39;on&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note that this allows the error message to be thrown without failing the
 test.</p>
-</div>
-<div class="section" id="test-template">
-<h3>Test template<a class="headerlink" href="#test-template" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="test-template">
+<h3>Test template<a class="headerlink" href="#test-template" title="Permalink to this heading">¶</a></h3>
 <p>A test template is readily available
 <a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/testTemplate.html">here</a>.
 The following sections shall be included in a test file:</p>
@@ -463,118 +1203,112 @@ The following sections shall be included in a test file:</p>
 </pre></div>
 </div>
 <p class="rubric">2. Test initialization</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">CBTDIR</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">global</span><span class="w"> </span><span class="n">CBTDIR</span>
 
 <span class="c">% save the current path and switch to the test path</span>
-<span class="n">currentDir</span> <span class="p">=</span> <span class="n">cd</span><span class="p">(</span><span class="n">fileparts</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="s">&#39;fileName&#39;</span><span class="p">)));</span>
+<span class="n">currentDir</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cd</span><span class="p">(</span><span class="nb">fileparts</span><span class="p">(</span><span class="nb">which</span><span class="p">(</span><span class="s">&#39;fileName&#39;</span><span class="p">)));</span>
 
 <span class="c">% get the path of the test folder</span>
-<span class="n">testPath</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">;</span>
+<span class="n">testPath</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">pwd</span><span class="p">;</span>
 </pre></div>
 </div>
 <p class="rubric">3. Define the solver packages to be tested and the tolerance</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% set the tolerance</span>
-<span class="n">tol</span> <span class="p">=</span> <span class="mf">1e-8</span><span class="p">;</span>
+<span class="n">tol</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1e-8</span><span class="p">;</span>
 
 <span class="c">% define the solver packages to be used to run this test</span>
-<span class="n">solvers</span> <span class="p">=</span> <span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;needsLP&#39;</span><span class="p">,</span><span class="n">true</span><span class="p">);</span>
+<span class="n">solvers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">prepareTest</span><span class="p">(</span><span class="s">&#39;needsLP&#39;</span><span class="p">,</span><span class="nb">true</span><span class="p">);</span>
 </pre></div>
 </div>
 <p class="rubric">4. Load a model and/or reference data</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% load a model distributed by the toolbox</span>
 <span class="n">getDistributedModel</span><span class="p">(</span><span class="s">&#39;testModel.mat&#39;</span><span class="p">);</span>
 <span class="c">% load a particular model for this test:</span>
-<span class="n">readCbModel</span><span class="p">([</span><span class="n">testPath</span> <span class="n">filesep</span> <span class="s">&#39;SpecificModel.mat&#39;</span><span class="p">])</span>
+<span class="n">readCbModel</span><span class="p">([</span><span class="n">testPath</span><span class="w"> </span><span class="nb">filesep</span><span class="w"> </span><span class="s">&#39;SpecificModel.mat&#39;</span><span class="p">])</span>
 <span class="c">% load reference data</span>
-<span class="n">load</span><span class="p">([</span><span class="n">testPath</span> <span class="n">filesep</span> <span class="s">&#39;testData_functionToBeTested.mat&#39;</span><span class="p">]);</span>
+<span class="nb">load</span><span class="p">([</span><span class="n">testPath</span><span class="w"> </span><span class="nb">filesep</span><span class="w"> </span><span class="s">&#39;testData_functionToBeTested.mat&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
-<p>Please only load <em>small</em> models, i.e.&nbsp;less than <code class="docutils literal notranslate"><span class="pre">100</span></code> reactions. If
+<p>Please only load <em>small</em> models, i.e. less than <code class="docutils literal notranslate"><span class="pre">100</span></code> reactions. If
 you want to use a non-standard test model that is already available
 online, please make a pull request with the URL entry to the
 <a class="reference external" href="https://github.com/opencobra/COBRA.models">COBRA.models repository</a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">In order to guarantee compatibility across platforms, please use the full path to the model. For instance:</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">warning<span class="colon">:</span></dt>
+<dd class="field-odd"><p>In order to guarantee compatibility across platforms, please use the full path to the model. For instance:</p>
+</dd>
+</dl>
 <p class="rubric">5. Create a parallel pool</p>
 <p>This is only necessary for tests that test a function that runs in
 parallel.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% create a parallel pool</span>
-<span class="n">poolobj</span> <span class="p">=</span> <span class="n">gcp</span><span class="p">(</span><span class="s">&#39;nocreate&#39;</span><span class="p">);</span> <span class="c">% if no pool, do not create new one.</span>
-<span class="k">if</span> <span class="nb">isempty</span><span class="p">(</span><span class="n">poolobj</span><span class="p">)</span>
-    <span class="n">parpool</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c">% launch 2 workers</span>
+<span class="n">poolobj</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">gcp</span><span class="p">(</span><span class="s">&#39;nocreate&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% if no pool, do not create new one.</span>
+<span class="k">if</span><span class="w"> </span><span class="nb">isempty</span><span class="p">(</span><span class="n">poolobj</span><span class="p">)</span>
+<span class="w">    </span><span class="n">parpool</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c">% launch 2 workers</span>
 <span class="k">end</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">Please only launch a pool of <code class="docutils literal notranslate"><span class="pre">2</span></code> workers - more workers</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">warning<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Please only launch a pool of <code class="docutils literal notranslate"><span class="pre">2</span></code> workers - more workers</p>
+</dd>
+</dl>
 <p>should not be needed to test a parallel function efficiently.</p>
 <p class="rubric">6. Body of test</p>
 <p>The test itself. If the solvers are essential for the functionality tested in this test use:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">solvers</span><span class="p">.</span><span class="n">LP</span><span class="p">)</span>
-    <span class="n">fprintf</span><span class="p">(</span><span class="s">&#39; -- Running &lt;testFile&gt; using the solver interface: %s ... &#39;</span><span class="p">,</span> <span class="n">solvers</span><span class="p">.</span><span class="n">LP</span><span class="p">{</span><span class="n">k</span><span class="p">});</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">solvers</span><span class="p">.</span><span class="n">LP</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39; -- Running &lt;testFile&gt; using the solver interface: %s ... &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">solvers</span><span class="p">.</span><span class="n">LP</span><span class="p">{</span><span class="n">k</span><span class="p">});</span>
 
-    <span class="n">solverLPOK</span> <span class="p">=</span> <span class="n">changeCobraSolver</span><span class="p">(</span><span class="n">solvers</span><span class="p">.</span><span class="n">LP</span><span class="p">{</span><span class="n">k</span><span class="p">},</span> <span class="s">&#39;LP&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-    <span class="c">% &lt;your test goes here&gt;</span>
+<span class="w">    </span><span class="n">solverLPOK</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">changeCobraSolver</span><span class="p">(</span><span class="n">solvers</span><span class="p">.</span><span class="n">LP</span><span class="p">{</span><span class="n">k</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;LP&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="c">% &lt;your test goes here&gt;</span>
 
-    <span class="c">% output a success message</span>
-    <span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;Done.\n&#39;</span><span class="p">);</span><span class="n"></span>
-<span class="n">end</span>
+<span class="w">    </span><span class="c">% output a success message</span>
+<span class="w">    </span><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Done.\n&#39;</span><span class="p">);</span>
+<span class="k">end</span>
 </pre></div>
 </div>
 <p>This is important, as the continuous integration system will run other solvers on the test in its nightly build. That way,
 we can determine solvers that work with a specific method, and those that do not (potentially due to precision problems or other issues).
 If the solvers are only used to test the outputs of a function for correctness, use:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solverLPOK</span> <span class="p">=</span> <span class="n">changeCobraSolver</span><span class="p">(</span><span class="n">solvers</span><span class="p">.</span><span class="n">LP</span><span class="p">{</span><span class="mi">1</span><span class="p">},</span> <span class="s">&#39;LP&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">solverLPOK</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">changeCobraSolver</span><span class="p">(</span><span class="n">solvers</span><span class="p">.</span><span class="n">LP</span><span class="p">{</span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="s">&#39;LP&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <span class="c">% &lt;your test goes here&gt;</span>
 
 <span class="c">% output a success message</span>
-<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;Done.\n&#39;</span><span class="p">);</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;Done.\n&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p class="rubric">7. Return to the original directory</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% change the directory</span>
-<span class="n">cd</span><span class="p">(</span><span class="n">currentDir</span><span class="p">)</span>
+<span class="nb">cd</span><span class="p">(</span><span class="n">currentDir</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="run-the-test-locally-on-your-machine">
-<h3>Run the test locally on your machine<a class="headerlink" href="#run-the-test-locally-on-your-machine" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="run-the-test-locally-on-your-machine">
+<h3>Run the test locally on your machine<a class="headerlink" href="#run-the-test-locally-on-your-machine" title="Permalink to this heading">¶</a></h3>
 <p>Please make sure that your test runs individually by typing after a
 fresh start:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">initCobraToolbox</span>
-<span class="o">&gt;&gt;</span> <span class="o">&lt;</span><span class="n">testName</span><span class="o">&gt;</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">initCobraToolbox</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">testName</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Please then verify that the test runs in the test suite by running:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">testAll</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">testAll</span>
 </pre></div>
 </div>
 <p>Alternatively, you can run the test suite in the background by typing:</p>
-<div class="code sh highlight-default notranslate"><div class="highlight"><pre><span></span>$ matlab -nodesktop -nosplash &lt; test/testAll.m
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>matlab<span class="w"> </span>-nodesktop<span class="w"> </span>-nosplash<span class="w"> </span>&lt;<span class="w"> </span>test/testAll.m
 </pre></div>
 </div>
-</div>
-<div class="section" id="verify-that-your-test-passed">
-<h3>Verify that your test passed<a class="headerlink" href="#verify-that-your-test-passed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="verify-that-your-test-passed">
+<h3>Verify that your test passed<a class="headerlink" href="#verify-that-your-test-passed" title="Permalink to this heading">¶</a></h3>
 <p>Once your pull request (PR) has been submitted, you will notice an
 orange mark next to your latest commit. Once the continuous integration
 (CI) server succeeded, you will see a green check mark. If the CI
 failed, you will see a red cross.</p>
-</div>
-<div class="section" id="what-should-i-do-in-case-my-pr-failed">
-<h3>What should I do in case my PR failed?<a class="headerlink" href="#what-should-i-do-in-case-my-pr-failed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="what-should-i-do-in-case-my-pr-failed">
+<h3>What should I do in case my PR failed?<a class="headerlink" href="#what-should-i-do-in-case-my-pr-failed" title="Permalink to this heading">¶</a></h3>
 <p>You can check why your PR failed by clicking on the mark and following
 the respective links. Alternatively, you can see the output of the CI
 for your PR
@@ -586,15 +1320,15 @@ add more commits that aim at fixing the error, and the CI will be
 re-triggered.</p>
 <p>Common errors include:</p>
 <ul class="simple">
-<li>Double percentage sign <code class="docutils literal notranslate"><span class="pre">%%</span></code> in your test file to separate code
-blocks. Replace <code class="docutils literal notranslate"><span class="pre">%%</span></code> with <code class="docutils literal notranslate"><span class="pre">%</span></code>.</li>
-<li>Compatibility issues (<code class="docutils literal notranslate"><span class="pre">ILOG</span> <span class="pre">Cplex</span></code> is not compatible with
+<li><p>Double percentage sign <code class="docutils literal notranslate"><span class="pre">%%</span></code> in your test file to separate code
+blocks. Replace <code class="docutils literal notranslate"><span class="pre">%%</span></code> with <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p></li>
+<li><p>Compatibility issues (<code class="docutils literal notranslate"><span class="pre">ILOG</span> <span class="pre">Cplex</span></code> is not compatible with
 <code class="docutils literal notranslate"><span class="pre">R2015b+</span></code>). Add an additional test on the version of matlab using
-<code class="docutils literal notranslate"><span class="pre">verLessThan('matlab',</span> <span class="pre">'&lt;version&gt;')</span></code>.</li>
+<code class="docutils literal notranslate"><span class="pre">verLessThan('matlab',</span> <span class="pre">'&lt;version&gt;')</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="can-i-find-out-how-many-tests-have-failed">
-<h3>Can I find out how many tests have failed?<a class="headerlink" href="#can-i-find-out-how-many-tests-have-failed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="can-i-find-out-how-many-tests-have-failed">
+<h3>Can I find out how many tests have failed?<a class="headerlink" href="#can-i-find-out-how-many-tests-have-failed" title="Permalink to this heading">¶</a></h3>
 <p>The logical conditions, when tested using <code class="docutils literal notranslate"><span class="pre">assert()</span></code>, will throw an
 error when not satisfied. It is bad practice to test the sum of tests
 passed and failed. Please only test using <code class="docutils literal notranslate"><span class="pre">assert(logicalCondition)</span></code>.
@@ -603,36 +1337,36 @@ comprehensive information is provided at the end of the test run.</p>
 <p>For instance, the following test script <strong>do not do this - bad
 practice!</strong>:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% do not do this: bad practice!</span>
-<span class="n">testPassed</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">testFailed</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">testPassed</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">testFailed</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
 <span class="c">% test on logical condition 1 - do not do this: bad practice!</span>
-<span class="k">if</span> <span class="n">logicalCondition1</span>
-    <span class="n">testPassed</span> <span class="p">=</span> <span class="n">testPassed</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span><span class="n"></span>
-<span class="n">else</span>
-<span class="n">    </span><span class="s">testFailed = testFailed + 1</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="n">logicalCondition1</span>
+<span class="w">    </span><span class="n">testPassed</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">testPassed</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">testFailed</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">testFailed</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="k">end</span>
 
 <span class="c">% test on logical condition 2 - do not do this: bad practice!</span>
-<span class="k">if</span> <span class="n">logicalCondition2</span>
-    <span class="n">testPassed</span> <span class="p">=</span> <span class="n">testPassed</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span><span class="n"></span>
-<span class="n">else</span>
-<span class="n">    </span><span class="s">testFailed = testFailed + 1</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="n">logicalCondition2</span>
+<span class="w">    </span><span class="n">testPassed</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">testPassed</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">testFailed</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">testFailed</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="k">end</span>
 
-<span class="n">assert</span><span class="p">(</span><span class="n">testPassed</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">testFailed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span> <span class="c">% do not do this: bad practice!</span>
+<span class="nb">assert</span><span class="p">(</span><span class="n">testPassed</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">testFailed</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c">% do not do this: bad practice!</span>
 </pre></div>
 </div>
 <p>shall be rewritten as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% good practice</span>
-<span class="n">assert</span><span class="p">(</span><span class="n">logicalCondition1</span><span class="p">);</span>
-<span class="n">assert</span><span class="p">(</span><span class="n">logicalCondition2</span><span class="p">);</span>
+<span class="nb">assert</span><span class="p">(</span><span class="n">logicalCondition1</span><span class="p">);</span>
+<span class="nb">assert</span><span class="p">(</span><span class="n">logicalCondition2</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="documentation-guide">
-<h2>Documentation guide<a class="headerlink" href="#documentation-guide" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="documentation-guide">
+<h2>Documentation guide<a class="headerlink" href="#documentation-guide" title="Permalink to this heading">¶</a></h2>
 <p>In order to enable the automatic documentation generation, the header of
 a <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> function has to be formatted properly. The automatic
 documentation extracts the commented header of the function (commented
@@ -652,7 +1386,7 @@ reads:</p>
 before the body of the function.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% This is the end of the header of the function</span>
 
-<span class="n">x</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c">% the body of the function begins after one empty line</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c">% the body of the function begins after one empty line</span>
 </pre></div>
 </div>
 <p>Importantly, <strong>do not</strong> put a comment above the first line of code, but
@@ -660,7 +1394,7 @@ include the comment inline:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% This is the end of the header of the function</span>
 
 <span class="c">% the body of the function begins after one empty line</span>
-<span class="n">x</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><strong>Rule 3</strong>: A line in the header that includes <code class="docutils literal notranslate"><span class="pre">..</span></code> after the
@@ -668,44 +1402,44 @@ percentage sign will be <strong>ignored</strong> in the documentation:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% .. this line will be ignored</span>
 </pre></div>
 </div>
-<div class="section" id="function-signature">
-<h3>Function signature<a class="headerlink" href="#function-signature" title="Permalink to this headline">¶</a></h3>
+<section id="function-signature">
+<h3>Function signature<a class="headerlink" href="#function-signature" title="Permalink to this heading">¶</a></h3>
 <p>The function signature must be correctly formatted. Leave a space after
 every comma and before and after the equal sign <code class="docutils literal notranslate"><span class="pre">=</span></code>. A correctly
 formatted function signature reads:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[output1, output2, output3] <span class="p">=</span><span class="w"> </span><span class="nf">someFunction</span><span class="p">(</span>input1, input2, input3<span class="p">)</span><span class="w"> </span><span class="c">% good practice</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[output1, output2, output3] = someFunction</span><span class="p">(</span>input1, input2, input3<span class="p">)</span><span class="w"> </span><span class="c">% good practice</span>
 </pre></div>
 </div>
 <p>A function signature that is not formatted properly throws an <strong>error</strong>
 during the automatic documentation generation:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[ output1,output2,output3 ]<span class="p">=</span><span class="nf">someFunction</span><span class="p">(</span> input1,input2,input3 <span class="p">)</span><span class="w"> </span><span class="c">% bad practice</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[ output1,output2,output3 ]=someFunction</span><span class="p">(</span> input1,input2,input3 <span class="p">)</span><span class="w"> </span><span class="c">% bad practice</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="function-description">
-<h3>Function description<a class="headerlink" href="#function-description" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="function-description">
+<h3>Function description<a class="headerlink" href="#function-description" title="Permalink to this heading">¶</a></h3>
 <p>The description of the function is a brief explanation of the purpose of
 the function. The description of the function may extend over several
 lines. However, try to keep the explanations as brief as possible.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[output1, output2, output3] <span class="p">=</span><span class="w"> </span><span class="nf">someFunction</span><span class="p">(</span>input1, input2, input3<span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[output1, output2, output3] = someFunction</span><span class="p">(</span>input1, input2, input3<span class="p">)</span>
 <span class="c">% This is a description of the function that helps to understand how the function works</span>
 <span class="c">% Here the description continues, then we leave an empty comment line</span>
 <span class="c">%</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="keywords">
-<h3>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="keywords">
+<h3>Keywords<a class="headerlink" href="#keywords" title="Permalink to this heading">¶</a></h3>
 <p>The automatic documentation software relies on keywords to properly
 format the documented function. A keyword also defines the start of a
 block with the header of a function. Main keywords include:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">USAGE:</span></code>: block for defining how to use the function</li>
-<li><code class="docutils literal notranslate"><span class="pre">INPUT:</span></code> or <code class="docutils literal notranslate"><span class="pre">INPUTS:</span></code>: block with input argument(s)</li>
-<li><code class="docutils literal notranslate"><span class="pre">OUTPUT:</span></code> or <code class="docutils literal notranslate"><span class="pre">OUTPUTS:</span></code>: block with output argument(s)</li>
-<li><code class="docutils literal notranslate"><span class="pre">EXAMPLE:</span></code>: block with example code (formatted <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> syntax)</li>
-<li><code class="docutils literal notranslate"><span class="pre">NOTE:</span></code>: highlighted box with text</li>
-<li><code class="docutils literal notranslate"><span class="pre">Author:</span></code>: list with author(s)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">USAGE:</span></code>: block for defining how to use the function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INPUT:</span></code> or <code class="docutils literal notranslate"><span class="pre">INPUTS:</span></code>: block with input argument(s)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OUTPUT:</span></code> or <code class="docutils literal notranslate"><span class="pre">OUTPUTS:</span></code>: block with output argument(s)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXAMPLE:</span></code>: block with example code (formatted <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> syntax)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NOTE:</span></code>: highlighted box with text</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Author:</span></code>: list with author(s)</p></li>
 </ul>
 <p>Each of them must be followed by non-empty lines and should be separated
 from the next block by an empty line.</p>
@@ -825,7 +1559,7 @@ author as follows:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%</span>
 <span class="c">% .. Author: - Name, date, additional information if needed</span>
 
-<span class="n">x</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c">% here the body of the function begins</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c">% here the body of the function begins</span>
 </pre></div>
 </div>
 <p>If there are 2 or more authors, format as follows:</p>
@@ -834,16 +1568,16 @@ author as follows:</p>
 <span class="c">%       - Name1, date, additional information if needed</span>
 <span class="c">%       - Name2, date, additional information if needed</span>
 
-<span class="n">x</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c">% here the body of the function begins</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c">% here the body of the function begins</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
 <p>A complete example of a function is provided here. Please remember that
 colons, indentations, and keywords are important to guarantee pretty
 formatting.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[output1, output2] <span class="p">=</span><span class="w"> </span><span class="nf">someFunction</span><span class="p">(</span>input1, input2, input3, input4<span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[output1, output2] = someFunction</span><span class="p">(</span>input1, input2, input3, input4<span class="p">)</span>
 <span class="c">% This is a description of the function that helps understand how the function works</span>
 <span class="c">% Here the description continues, then we leave an empty comment line</span>
 <span class="c">%</span>
@@ -882,64 +1616,64 @@ formatting.</p>
 <span class="c">%</span>
 <span class="c">% .. Author: - Name, date, some information</span>
 
-<span class="n">x</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c">% here the body of the function begins</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c">% here the body of the function begins</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="style-guide">
-<span id="styleguide"></span><h2>Style guide<a class="headerlink" href="#style-guide" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="style-guide">
+<span id="styleguide"></span><h2>Style guide<a class="headerlink" href="#style-guide" title="Permalink to this heading">¶</a></h2>
 <p>A comprehensive MATLAB style guide written by Richard Jonson can be
-found [here](<a class="reference external" href="http://www.datatool.com/downloads/MatlabStyle2%20book.pdf">http://www.datatool.com/downloads/MatlabStyle2%20book.pdf</a>).</p>
-<div class="section" id="code">
-<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h3>
+found <a class="reference external" href="https://www.ee.columbia.edu/~marios/matlab/MatlabStyle1p5.pdf">here</a>.</p>
+<section id="code">
+<h3>Code<a class="headerlink" href="#code" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
-<li><strong>Spacing</strong></li>
+<li><p><strong>Spacing</strong></p></li>
 </ol>
 <ul class="simple">
-<li>Write <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">singleCondition</span></code>, and not <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(singleCondition)</span></code>. Use
-brackets only for multiple conditions.</li>
-<li>Use spaces around operators, e.g., <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code> instead of <code class="docutils literal notranslate"><span class="pre">i+1</span></code></li>
-<li>Use spaces after commas (unless separated by newlines)</li>
-<li>Avoid spaces inside the curly-braces of cells: <code class="docutils literal notranslate"><span class="pre">{a,</span> <span class="pre">b}</span></code> instead of
-<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">a,</span> <span class="pre">b</span> <span class="pre">}</span></code></li>
-<li>Use spaces after commas in lists, after operands, after names, etc.
+<li><p>Write <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">singleCondition</span></code>, and not <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(singleCondition)</span></code>. Use
+brackets only for multiple conditions.</p></li>
+<li><p>Use spaces around operators, e.g., <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code> instead of <code class="docutils literal notranslate"><span class="pre">i+1</span></code></p></li>
+<li><p>Use spaces after commas (unless separated by newlines)</p></li>
+<li><p>Avoid spaces inside the curly-braces of cells: <code class="docutils literal notranslate"><span class="pre">{a,</span> <span class="pre">b}</span></code> instead of
+<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">a,</span> <span class="pre">b</span> <span class="pre">}</span></code></p></li>
+<li><p>Use spaces after commas in lists, after operands, after names, etc.
 This also improves readability. e.g. <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3;</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6];</span></code>
-instead of <code class="docutils literal notranslate"><span class="pre">a=[1,2,3;4,5,6]</span></code>;</li>
-<li>Include a single line of whitespace between blocks of code</li>
-<li>Include a whitespace after a comment sign <code class="docutils literal notranslate"><span class="pre">%</span></code></li>
+instead of <code class="docutils literal notranslate"><span class="pre">a=[1,2,3;4,5,6]</span></code>;</p></li>
+<li><p>Include a single line of whitespace between blocks of code</p></li>
+<li><p>Include a whitespace after a comment sign <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><strong>Variable names</strong></li>
+<li><p><strong>Variable names</strong></p></li>
 </ol>
 <ul class="simple">
-<li>When using mixed words, separate with capital letters (with no
-intervening spaces or punctuation), e.g. <code class="docutils literal notranslate"><span class="pre">calculateKineticFlux</span></code></li>
-<li>Avoid ambiguity when naming variables: be as specific as possible</li>
-<li>All variable names must be written in English</li>
-<li>Use verb-noun structure for functions: allows to explain the
-operations performed</li>
-<li>Append meaningful prefixes when possible, e.g. <code class="docutils literal notranslate"><span class="pre">Av</span></code>, <code class="docutils literal notranslate"><span class="pre">Sum</span></code>,
-<code class="docutils literal notranslate"><span class="pre">Min</span></code>, <code class="docutils literal notranslate"><span class="pre">Max</span></code>, etc</li>
-<li>Boolean type variables, i.e.&nbsp;with only <code class="docutils literal notranslate"><span class="pre">true/false</span></code> values, with
-<code class="docutils literal notranslate"><span class="pre">Is</span></code> or <code class="docutils literal notranslate"><span class="pre">is</span></code> to stress this fact, e.g. <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">dataIsLoaded</span></code></li>
-<li>Reuse names for short-life and variables with local scope, such as
-indexes of loops</li>
-<li>Only use <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>, etc., as indexes for very short loops</li>
+<li><p>When using mixed words, separate with capital letters (with no
+intervening spaces or punctuation), e.g. <code class="docutils literal notranslate"><span class="pre">calculateKineticFlux</span></code></p></li>
+<li><p>Avoid ambiguity when naming variables: be as specific as possible</p></li>
+<li><p>All variable names must be written in English</p></li>
+<li><p>Use verb-noun structure for functions: allows to explain the
+operations performed</p></li>
+<li><p>Append meaningful prefixes when possible, e.g. <code class="docutils literal notranslate"><span class="pre">Av</span></code>, <code class="docutils literal notranslate"><span class="pre">Sum</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Min</span></code>, <code class="docutils literal notranslate"><span class="pre">Max</span></code>, etc</p></li>
+<li><p>Boolean type variables, i.e. with only <code class="docutils literal notranslate"><span class="pre">true/false</span></code> values, with
+<code class="docutils literal notranslate"><span class="pre">Is</span></code> or <code class="docutils literal notranslate"><span class="pre">is</span></code> to stress this fact, e.g. <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">dataIsLoaded</span></code></p></li>
+<li><p>Reuse names for short-life and variables with local scope, such as
+indexes of loops</p></li>
+<li><p>Only use <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>, etc., as indexes for very short loops</p></li>
 </ul>
 <ol class="arabic simple" start="3">
-<li><strong>Miscellaneous</strong></li>
+<li><p><strong>Miscellaneous</strong></p></li>
 </ol>
 <ul class="simple">
-<li>Add sanity checks to the code, e.g., if something does not work as
+<li><p>Add sanity checks to the code, e.g., if something does not work as
 expected, there should be code to check for this and either issue a
-<code class="docutils literal notranslate"><span class="pre">warning</span></code> or an <code class="docutils literal notranslate"><span class="pre">error</span></code> if there is a problem.</li>
-<li>Do not encode the absolute position of any files within any function:
-use relative paths, where possible</li>
-<li>Indent the code: really improves readability.</li>
-<li>Fix a maximum line length: break large ones if needed. Ensure that it
+<code class="docutils literal notranslate"><span class="pre">warning</span></code> or an <code class="docutils literal notranslate"><span class="pre">error</span></code> if there is a problem.</p></li>
+<li><p>Do not encode the absolute position of any files within any function:
+use relative paths, where possible</p></li>
+<li><p>Indent the code: really improves readability.</p></li>
+<li><p>Fix a maximum line length: break large ones if needed. Ensure that it
 is clear that the sentence is separated through different lines,
-e.g.:</li>
+e.g.:</p></li>
 </ul>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span>function [parameter1, parameter2, parameter3, parameter4] = functionManyParameters...
           (InputParameter1, InputParameter2, InputParameter3, InputParameter3, ...
@@ -947,173 +1681,176 @@ e.g.:</li>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Divide the code in separate functional files whenever it is possible
-(and logical)</li>
+<li><p>Divide the code in separate functional files whenever it is possible
+(and logical)</p></li>
 </ul>
 <ol class="arabic simple" start="4">
-<li><strong>Platform independent code</strong></li>
+<li><p><strong>Platform independent code</strong></p></li>
 </ol>
 <ul class="simple">
-<li>Use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to get the current directory</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">filesep</span></code> for paths (e.g., <code class="docutils literal notranslate"><span class="pre">['myPath'</span> <span class="pre">filesep</span> <span class="pre">'myFile.m']</span></code>)</li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to get the current directory</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">filesep</span></code> for paths (e.g., <code class="docutils literal notranslate"><span class="pre">['myPath'</span> <span class="pre">filesep</span> <span class="pre">'myFile.m']</span></code>)</p></li>
 </ul>
-</div>
-<div class="section" id="documentation-and-comments">
-<h3>Documentation and comments<a class="headerlink" href="#documentation-and-comments" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="documentation-and-comments">
+<h3>Documentation and comments<a class="headerlink" href="#documentation-and-comments" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
-<li>Make sure the code is fully documented and commented, especially parts of
-the code that might be difficult to understand for beginner users.</li>
-<li>Header for each file with the following elements:<ul>
-<li>Brief description (easy and short functions) or more detailed
-explanations (more complicated functions).</li>
-<li>Description of <code class="docutils literal notranslate"><span class="pre">INPUT</span></code> and <code class="docutils literal notranslate"><span class="pre">OUTPUT</span></code> variables</li>
-<li>Authors, co-authors, contributors (and the contribution of each of
-them)</li>
-<li>Date of first fully operative version, and dates of consequent
+<li><p>Make sure the code is fully documented and commented, especially parts of
+the code that might be difficult to understand for beginner users.</p></li>
+<li><p>Header for each file with the following elements:</p>
+<ul>
+<li><p>Brief description (easy and short functions) or more detailed
+explanations (more complicated functions).</p></li>
+<li><p>Description of <code class="docutils literal notranslate"><span class="pre">INPUT</span></code> and <code class="docutils literal notranslate"><span class="pre">OUTPUT</span></code> variables</p></li>
+<li><p>Authors, co-authors, contributors (and the contribution of each of
+them)</p></li>
+<li><p>Date of first fully operative version, and dates of consequent
 modifications with the corresponding number of version, e.g.
-<code class="docutils literal notranslate"><span class="pre">v1</span> <span class="pre">-</span> <span class="pre">11/06/2014</span> <span class="pre">/</span> <span class="pre">v2</span> <span class="pre">-</span> <span class="pre">12/08/2014</span></code></li>
-<li>Description of modifications in later versions, e.g.
-<code class="docutils literal notranslate"><span class="pre">v2:</span> <span class="pre">the</span> <span class="pre">efficiency</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">improved</span> <span class="pre">by</span> <span class="pre">substituting</span> <span class="pre">the</span> <span class="pre">loops</span> <span class="pre">with</span> <span class="pre">matrices</span> <span class="pre">operations</span></code></li>
+<code class="docutils literal notranslate"><span class="pre">v1</span> <span class="pre">-</span> <span class="pre">11/06/2014</span> <span class="pre">/</span> <span class="pre">v2</span> <span class="pre">-</span> <span class="pre">12/08/2014</span></code></p></li>
+<li><p>Description of modifications in later versions, e.g.
+<code class="docutils literal notranslate"><span class="pre">v2:</span> <span class="pre">the</span> <span class="pre">efficiency</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">improved</span> <span class="pre">by</span> <span class="pre">substituting</span> <span class="pre">the</span> <span class="pre">loops</span> <span class="pre">with</span> <span class="pre">matrices</span> <span class="pre">operations</span></code></p></li>
 </ul>
 </li>
-<li>Throughout the file:<ul>
-<li>Comment smartly. Not every line, but enough to allow tracking the
-execution</li>
-<li>Try to use brief comments.</li>
-<li>In case you believe a more complicated part requires a more
+<li><p>Throughout the file:</p>
+<ul>
+<li><p>Comment smartly. Not every line, but enough to allow tracking the
+execution</p></li>
+<li><p>Try to use brief comments.</p></li>
+<li><p>In case you believe a more complicated part requires a more
 comprehensive explanation, describe <code class="docutils literal notranslate"><span class="pre">What</span> <span class="pre">are</span> <span class="pre">you</span> <span class="pre">doing</span></code> and
-<code class="docutils literal notranslate"><span class="pre">How</span> <span class="pre">it</span> <span class="pre">is</span> <span class="pre">done</span> <span class="pre">through</span> <span class="pre">a</span> <span class="pre">more</span> <span class="pre">detailed</span> <span class="pre">paragraph</span></code>.</li>
-<li>If the code is divided in blocks, you can also introduce briefly
-what is the function of each block beforehand.</li>
-<li>Format the comments with a whitespace after the <code class="docutils literal notranslate"><span class="pre">%</span></code> sign. Try to use lowercase letters for comments.</li>
+<code class="docutils literal notranslate"><span class="pre">How</span> <span class="pre">it</span> <span class="pre">is</span> <span class="pre">done</span> <span class="pre">through</span> <span class="pre">a</span> <span class="pre">more</span> <span class="pre">detailed</span> <span class="pre">paragraph</span></code>.</p></li>
+<li><p>If the code is divided in blocks, you can also introduce briefly
+what is the function of each block beforehand.</p></li>
+<li><p>Format the comments with a whitespace after the <code class="docutils literal notranslate"><span class="pre">%</span></code> sign. Try to use lowercase letters for comments.</p></li>
 </ul>
 </li>
 </ul>
-<!-- elaborate guidelines to automatically generate the documentation //--></div>
-<div class="section" id="tests">
-<h3>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h3>
+<!-- elaborate guidelines to automatically generate the documentation //--></section>
+<section id="tests">
+<h3>Tests<a class="headerlink" href="#tests" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
-<li>Annotate the individual tests extensively for review</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">assert(computedResult</span> <span class="pre">==</span> <span class="pre">expectedResult)</span></code> to logically test
+<li><p>Annotate the individual tests extensively for review</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">assert(computedResult</span> <span class="pre">==</span> <span class="pre">expectedResult)</span></code> to logically test
 the <code class="docutils literal notranslate"><span class="pre">computedResult</span></code> and the <code class="docutils literal notranslate"><span class="pre">expectedResult</span></code> (you may also use
-<code class="docutils literal notranslate"><span class="pre">&lt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>)</li>
-<li>For testing all entries of a vector, use
-<code class="docutils literal notranslate"><span class="pre">assert(all(vector1</span> <span class="pre">==</span> <span class="pre">vector2))</span></code></li>
-<li>Only use equality <code class="docutils literal notranslate"><span class="pre">assert</span></code> tests for integer values</li>
-<li>Make sure that equality <code class="docutils literal notranslate"><span class="pre">assert</span></code> tests within a given tolerance,
-e.g., <code class="docutils literal notranslate"><span class="pre">tol</span> <span class="pre">=</span> <span class="pre">1e-9;</span> <span class="pre">assert(condition</span> <span class="pre">&lt;</span> <span class="pre">tol);</span></code></li>
-<li>Write loops for testing multiple models and/or solvers</li>
-<li>Try to make your tests compatible with as many solvers as possible</li>
-<li>Test, if possible, your contribution on <code class="docutils literal notranslate"><span class="pre">Linux</span></code></li>
-<li>Make sure to limit the output of the function to a minimum - only
-print the necessary information</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">verbose</span></code> or <code class="docutils literal notranslate"><span class="pre">printLevel</span></code> to switch the verbose mode</li>
-<li>Ensure that the solution of optimization problems is actually a
+<code class="docutils literal notranslate"><span class="pre">&lt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>)</p></li>
+<li><p>For testing all entries of a vector, use
+<code class="docutils literal notranslate"><span class="pre">assert(all(vector1</span> <span class="pre">==</span> <span class="pre">vector2))</span></code></p></li>
+<li><p>Only use equality <code class="docutils literal notranslate"><span class="pre">assert</span></code> tests for integer values</p></li>
+<li><p>Make sure that equality <code class="docutils literal notranslate"><span class="pre">assert</span></code> tests within a given tolerance,
+e.g., <code class="docutils literal notranslate"><span class="pre">tol</span> <span class="pre">=</span> <span class="pre">1e-9;</span> <span class="pre">assert(condition</span> <span class="pre">&lt;</span> <span class="pre">tol);</span></code></p></li>
+<li><p>Write loops for testing multiple models and/or solvers</p></li>
+<li><p>Try to make your tests compatible with as many solvers as possible</p></li>
+<li><p>Test, if possible, your contribution on <code class="docutils literal notranslate"><span class="pre">Linux</span></code></p></li>
+<li><p>Make sure to limit the output of the function to a minimum - only
+print the necessary information</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">verbose</span></code> or <code class="docutils literal notranslate"><span class="pre">printLevel</span></code> to switch the verbose mode</p></li>
+<li><p>Ensure that the solution of optimization problems is actually a
 solution (test that the solution vector satisfies the imposed
-constraints)</li>
+constraints)</p></li>
 </ul>
-</div>
-<div class="section" id="git-commit-messages">
-<h3>Git commit messages<a class="headerlink" href="#git-commit-messages" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="git-commit-messages">
+<h3>Git commit messages<a class="headerlink" href="#git-commit-messages" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
-<li>Use the present tense (“Add feature” not “Added feature”)</li>
-<li>Limit the first line to 72 characters or less</li>
-<li>Reference issues and pull requests liberally</li>
-<li>When only changing documentation, include <code class="docutils literal notranslate"><span class="pre">[documentation]</span></code> in the commit
-description</li>
-<li>Consider starting the commit message (not the title of the PR) with
-an applicable emoji:<ul>
-<li><img src="https://king.nuigalway.ie/cobratoolbox/img/bug.png" height="20px" width="20px" alt="bug"> <code class="docutils literal notranslate"><span class="pre">:bug:</span></code> when fixing a bug</li>
-<li><img src="https://king.nuigalway.ie/cobratoolbox/img/art.png" height="20px" width="20px" alt="art"> <code class="docutils literal notranslate"><span class="pre">:art:</span></code> when improving the format/structure of the code</li>
-<li><img src="https://king.nuigalway.ie/cobratoolbox/img/racehorse.png" height="20px" width="20px" alt="racehorse"> <code class="docutils literal notranslate"><span class="pre">:racehorse:</span></code> when improving performance</li>
-<li><img src="https://king.nuigalway.ie/cobratoolbox/img/memo.png" height="20px" width="20px" alt="memo"> <code class="docutils literal notranslate"><span class="pre">:memo:</span></code> when writing docs</li>
-<li><img src="https://king.nuigalway.ie/cobratoolbox/img/fire.png" height="20px" width="20px" alt="fire"> <code class="docutils literal notranslate"><span class="pre">:fire:</span></code> when removing code or files</li>
-<li><img src="https://king.nuigalway.ie/cobratoolbox/img/white_check_mark.png" height="20px" width="20px" alt="white_check_mark"> <code class="docutils literal notranslate"><span class="pre">:white_check_mark:</span></code> when adding tests</li>
-<li><img src="https://king.nuigalway.ie/cobratoolbox/img/penguin.png" height="20px" width="20px" alt="penguin"> <code class="docutils literal notranslate"><span class="pre">:penguin:</span></code> when fixing something on Linux</li>
-<li><img src="https://king.nuigalway.ie/cobratoolbox/img/apple.png" height="20px" width="20px" alt="apple"> <code class="docutils literal notranslate"><span class="pre">:apple:</span></code> when fixing something on macOS</li>
-<li><img src="https://king.nuigalway.ie/cobratoolbox/img/computer.png" height="20px" width="20px" alt="computer"> <code class="docutils literal notranslate"><span class="pre">:computer:</span></code> when fixing something on Windows</li>
-<li><img src="https://king.nuigalway.ie/cobratoolbox/img/green_heart.png" height="20px" width="20px" alt="green_heart"> <code class="docutils literal notranslate"><span class="pre">:green_heart:</span></code> when fixing the CI build</li>
+<li><p>Use the present tense (“Add feature” not “Added feature”)</p></li>
+<li><p>Limit the first line to 72 characters or less</p></li>
+<li><p>Reference issues and pull requests liberally</p></li>
+<li><p>When only changing documentation, include <code class="docutils literal notranslate"><span class="pre">[documentation]</span></code> in the commit
+description</p></li>
+<li><p>Consider starting the commit message (not the title of the PR) with
+an applicable emoji:</p>
+<ul>
+<li><p>🐛 <code class="docutils literal notranslate"><span class="pre">:bug:</span></code> when fixing a bug</p></li>
+<li><p>🎨 <code class="docutils literal notranslate"><span class="pre">:art:</span></code> when improving the format or structure of the code</p></li>
+<li><p>🐎 <code class="docutils literal notranslate"><span class="pre">:racehorse:</span></code> when improving performance</p></li>
+<li><p>📝 <code class="docutils literal notranslate"><span class="pre">:memo:</span></code> when writing docs</p></li>
+<li><p>🔥 <code class="docutils literal notranslate"><span class="pre">:fire:</span></code> when removing code or files</p></li>
+<li><p>✅ <code class="docutils literal notranslate"><span class="pre">:white_check_mark:</span></code> when adding tests</p></li>
+<li><p>🐧 <code class="docutils literal notranslate"><span class="pre">:penguin:</span></code> when fixing something on Linux</p></li>
+<li><p>🍎 <code class="docutils literal notranslate"><span class="pre">:apple:</span></code> when fixing something on macOS</p></li>
+<li><p>💻 <code class="docutils literal notranslate"><span class="pre">:computer:</span></code> when fixing something on Windows</p></li>
+<li><p>💚 <code class="docutils literal notranslate"><span class="pre">:green_heart:</span></code> when fixing the CI build</p></li>
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="issues-enhancements-guide">
-<h2>Issues/enhancements guide<a class="headerlink" href="#issues-enhancements-guide" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="what-should-i-do-before-opening-an-issue">
-<h3>What should I do before opening an issue?<a class="headerlink" href="#what-should-i-do-before-opening-an-issue" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="issues-enhancements-guide">
+<h2>Issues/enhancements guide<a class="headerlink" href="#issues-enhancements-guide" title="Permalink to this heading">¶</a></h2>
+<section id="what-should-i-do-before-opening-an-issue">
+<h3>What should I do before opening an issue?<a class="headerlink" href="#what-should-i-do-before-opening-an-issue" title="Permalink to this heading">¶</a></h3>
 <p>Following these guidelines helps maintainers and the community
-understand your report <img src="https://king.nuigalway.ie/cobratoolbox/img/pencil.png" height="20px" width="20px" alt="pencil">, reproduce the behavior <img src="https://king.nuigalway.ie/cobratoolbox/img/computer.png" height="20px" width="20px" alt="computer">, and
+understand your report <img src="/cobratoolbox/stable/_static/img/pencil.png" height="20px" width="20px" alt="pencil">, reproduce the behavior <img src="/cobratoolbox/stable/_static/img/computer.png" height="20px" width="20px" alt="computer">, and
 fix it.</p>
 <ul class="simple">
-<li><strong>Get the latest version</strong> Check if you can reproduce the problem
+<li><p><strong>Get the latest version</strong> Check if you can reproduce the problem
 with the latest version, if the problem happens when you run your
 script/function with a different version of <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> or when using
-a different computer <img src="https://king.nuigalway.ie/cobratoolbox/img/computer.png" height="20px" width="20px" alt="computer"> or different operating system (such
-as <code class="docutils literal notranslate"><span class="pre">Linux</span></code>, <code class="docutils literal notranslate"><span class="pre">Windows</span></code>, or <code class="docutils literal notranslate"><span class="pre">macOS</span></code>).</li>
-<li><strong>Check The COBRA Toolbox Forum on Google</strong>
+a different computer <img src="/cobratoolbox/stable/_static/img/computer.png" height="20px" width="20px" alt="computer"> or different operating system (such
+as <code class="docutils literal notranslate"><span class="pre">Linux</span></code>, <code class="docutils literal notranslate"><span class="pre">Windows</span></code>, or <code class="docutils literal notranslate"><span class="pre">macOS</span></code>).</p></li>
+<li><p><strong>Check The COBRA Toolbox Forum on Google</strong>
 <a class="reference external" href="https://groups.google.com/forum/#!forum/cobra-toolbox">here</a>
 Has your question already been asked, or has your problem already
 been reported? If it has, add a comment to the existing issue instead
-of opening a new one.</li>
-<li><strong>Check the list of currently reported issues</strong>
+of opening a new one.</p></li>
+<li><p><strong>Check the list of currently reported issues</strong>
 <a class="reference external" href="https://github.com/opencobra/cobratoolbox/issues">here</a>. If you
 happen to find a related issue, please use that thread or refer in
-your new issue to an already existing one.</li>
-<li><strong>Check the list of open pull requests</strong>
-<a class="reference external" href="https://github.com/opencobra/cobratoolbox/pulls">here</a>.</li>
+your new issue to an already existing one.</p></li>
+<li><p><strong>Check the list of open pull requests</strong>
+<a class="reference external" href="https://github.com/opencobra/cobratoolbox/pulls">here</a>.</p></li>
 </ul>
 <p>If you provide snippets in the issue/pull request, use <a class="reference external" href="https://help.github.com/articles/markdown-basics/#multiple-lines">Markdown code
 blocks</a>.</p>
-</div>
-<div class="section" id="how-can-i-report-an-issue-or-enhancement">
-<h3>How can I report an issue (or enhancement)?<a class="headerlink" href="#how-can-i-report-an-issue-or-enhancement" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="how-can-i-report-an-issue-or-enhancement">
+<h3>How can I report an issue (or enhancement)?<a class="headerlink" href="#how-can-i-report-an-issue-or-enhancement" title="Permalink to this heading">¶</a></h3>
 <p>Explain the problem and include <strong>additional details</strong> to help
 maintainers reproduce the problem:</p>
 <ul class="simple">
-<li>Use a clear and descriptive title.</li>
-<li>Provide information when you last updated The COBRA Toolbox.</li>
-<li>Describe the exact steps that reproduce the problem and that describe
+<li><p>Use a clear and descriptive title.</p></li>
+<li><p>Provide information when you last updated The COBRA Toolbox.</p></li>
+<li><p>Describe the exact steps that reproduce the problem and that describe
 the proposed enhancement in as many details as possible. Start by
-explaining how you started and initialized The COBRA Toolbox.</li>
-<li>Provide specific examples to demonstrate the steps.</li>
-<li>Describe the current behavior you observed after following the steps
-and point out what exactly is the problem with that behavior.</li>
-<li>Explain what behavior you expected to see instead and why.</li>
+explaining how you started and initialized The COBRA Toolbox.</p></li>
+<li><p>Provide specific examples to demonstrate the steps.</p></li>
+<li><p>Describe the current behavior you observed after following the steps
+and point out what exactly is the problem with that behavior.</p></li>
+<li><p>Explain what behavior you expected to see instead and why.</p></li>
 </ul>
 <p>Provide details on the <strong>nature of the issue</strong>:</p>
 <ul class="simple">
-<li>If you’re reporting that <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> crashed, include a crash report.
+<li><p>If you’re reporting that <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> crashed, include a crash report.
 Indicate the line that you think that made <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> crash. As this
 is an operating system related issue, please make sure to test the
-same code on a different computer and/or operating system <img src="https://king.nuigalway.ie/cobratoolbox/img/computer.png" height="20px" width="20px" alt="computer">
-before reporting the issue.</li>
-<li>If the problem is related to performance, include more details, such
+same code on a different computer and/or operating system <img src="/cobratoolbox/stable/_static/img/computer.png" height="20px" width="20px" alt="computer">
+before reporting the issue.</p></li>
+<li><p>If the problem is related to performance, include more details, such
 as CPU information, RAM, computer brand/model. Eventually, mention
-where you feel potential improvements could be made.</li>
-<li>If the problem wasn’t triggered by a specific action, describe what
-you were doing before the problem happened.</li>
+where you feel potential improvements could be made.</p></li>
+<li><p>If the problem wasn’t triggered by a specific action, describe what
+you were doing before the problem happened.</p></li>
 </ul>
 <p>Include details about your <strong>configuration and environment</strong>:</p>
 <ul class="simple">
-<li>Provide details on your <code class="docutils literal notranslate"><span class="pre">startup.m</span></code> and your <code class="docutils literal notranslate"><span class="pre">pathdef.m</span></code> file.</li>
-<li>Which version of MATLAB are you using?</li>
-<li>What operating system are you using?</li>
-<li>Which solvers do you have installed? You can get that table by
-running <code class="docutils literal notranslate"><span class="pre">initCobraToolbox</span></code>.</li>
+<li><p>Provide details on your <code class="docutils literal notranslate"><span class="pre">startup.m</span></code> and your <code class="docutils literal notranslate"><span class="pre">pathdef.m</span></code> file.</p></li>
+<li><p>Which version of MATLAB are you using?</p></li>
+<li><p>What operating system are you using?</p></li>
+<li><p>Which solvers do you have installed? You can get that table by
+running <code class="docutils literal notranslate"><span class="pre">initCobraToolbox</span></code>.</p></li>
 </ul>
 <p>Provide more context by answering these <strong>questions</strong>:</p>
 <ul class="simple">
-<li>Might the problem be related to an external program?</li>
-<li>Did the problem start happening recently?</li>
-<li>If the problem started happening recently, can you reproduce the
-problem in an older version of The COBRA Toolbox?</li>
-<li>Can you reliably reproduce the issue?</li>
-<li>Does the problem happen for all COBRA models, or only some?</li>
+<li><p>Might the problem be related to an external program?</p></li>
+<li><p>Did the problem start happening recently?</p></li>
+<li><p>If the problem started happening recently, can you reproduce the
+problem in an older version of The COBRA Toolbox?</p></li>
+<li><p>Can you reliably reproduce the issue?</p></li>
+<li><p>Does the problem happen for all COBRA models, or only some?</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -1125,10 +1862,10 @@ problem in an older version of The COBRA Toolbox?</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cite.html" class="btn btn-default float-right" title="How to cite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="plan.html" class="btn btn-default float-right" title="Development Plan" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tutorials/index.html" class="btn btn-default" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="faq.html" class="btn btn-default" title="FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1137,7 +1874,7 @@ problem in an older version of The COBRA Toolbox?</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2020, The COBRA Toolbox developers.
+        &copy; Copyright 2017-2026, The COBRA Toolbox developers.
 
     </p>
   </div>
@@ -1165,11 +1902,9 @@ problem in an older version of The COBRA Toolbox?</li>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
 
   
 

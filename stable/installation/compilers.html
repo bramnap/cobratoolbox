@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Compiler Installation Guide &mdash; The COBRA Toolbox</title>
@@ -14,16 +15,12 @@
   
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="../_static/img/apple-touch-icon.png">
-  
   
     <link rel="icon" type="image/png" sizes="32x32" href="../_static/img/favicon-32x32.png">
   
   
     <link rel="icon" type="image/png" sizes="16x16" href="../_static/img/favicon-16x16.png">
   
-  
-    <link rel="mask-icon" href="../_static/img/safari-pinned-tab.svg" color="#5bbad5">
   
   
     <link rel="manifest" href="../_static/json/manifest.json">
@@ -57,6 +54,10 @@
   
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/cobra.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
@@ -80,14 +81,15 @@
           
 
           
-            <a href="../index.html">
+            <a href="../index.html" class="icon icon-home"> The COBRA Toolbox
           
 
           
-            
-            <img src="https://king.nuigalway.ie/cobratoolbox/img/logo.png" class="logo" alt="logo"/>
+            <img src="/cobratoolbox/stable/_static/img/logo.png" class="logo" alt="cobratoolbox logo" />
           
           </a>
+
+              
           <h1>The COBRA Toolbox</h1>
 
           
@@ -117,14 +119,13 @@
 			    enabled: true
 		    }
 		},
-
-    	template: {
+	template: {
 	    	type: "custom",
 		    method: function(value, item) {
-                return "<span><a href='../search.html?q=" + item.name + "&check_keywords=yes&area=default'>" + value + "</a>" + "<a href='../_static/../" + item.website_url + "' ><img src='../_static/link.svg'/></a></span>";
+                return "<span><a href='../_static/../" + item.website_url + "' >" + value + "</a>" + "<a href='../_static/../" + item.website_url + "' ><img src='../_static/link.svg'/></a></span>";
 		    }
 	    },
-
+		
 		theme: "square"
 
 	};
@@ -144,14 +145,28 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
               </ul>
-              <ul>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using the Toolbox</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How to contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cite.html">How to cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../submodules/index.html">Submodules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How to contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plan.html">Development Plan</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cite.html">How to cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../funding.html">Funding</a></li>
 </ul>
@@ -175,57 +190,30 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../contents.html">Docs</a> &raquo;</li>
-        
-      <li>Compiler Installation Guide</li>
-    
-    
+      <li><a href="../contents.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Compiler Installation Guide</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="compiler-installation-guide">
-<h1>Compiler Installation Guide<a class="headerlink" href="#compiler-installation-guide" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="gcc-compiler">
-<h2>gcc compiler<a class="headerlink" href="#gcc-compiler" title="Permalink to this headline">¶</a></h2>
-<p>You can download <code class="docutils literal"><span class="pre">gcc</span></code> from <a class="reference external" href="https://gcc.gnu.org/wiki/InstallingGCC">here</a>.
-You may find information on how to install <code class="docutils literal"><span class="pre">gcc</span></code> <a class="reference external" href="http://preshing.com/20141108/how-to-install-the-latest-gcc-on-windows/">here</a>.</p>
-</div>
-<div class="section" id="gfortran-compiler">
-<h2>gfortran compiler<a class="headerlink" href="#gfortran-compiler" title="Permalink to this headline">¶</a></h2>
-<p>You can install <code class="docutils literal"><span class="pre">gfortran</span></code> by following the instructions <a class="reference external" href="https://gcc.gnu.org/wiki/GFortranBinaries">here</a>.</p>
-</div>
-</div>
+  <section id="compiler-installation-guide">
+<h1>Compiler Installation Guide<a class="headerlink" href="#compiler-installation-guide" title="Permalink to this heading">¶</a></h1>
+<section id="gcc-compiler">
+<h2>gcc compiler<a class="headerlink" href="#gcc-compiler" title="Permalink to this heading">¶</a></h2>
+<p>You can download <code class="docutils literal notranslate"><span class="pre">gcc</span></code> from <a class="reference external" href="https://gcc.gnu.org/wiki/InstallingGCC">here</a>.
+You may find information on how to install <code class="docutils literal notranslate"><span class="pre">gcc</span></code> <a class="reference external" href="http://preshing.com/20141108/how-to-install-the-latest-gcc-on-windows/">here</a>.</p>
+</section>
+<section id="gfortran-compiler">
+<h2>gfortran compiler<a class="headerlink" href="#gfortran-compiler" title="Permalink to this heading">¶</a></h2>
+<p>You can install <code class="docutils literal notranslate"><span class="pre">gfortran</span></code> by following the instructions <a class="reference external" href="https://gcc.gnu.org/wiki/GFortranBinaries">here</a>.</p>
+</section>
+</section>
 
 
            </div>
@@ -240,7 +228,7 @@ You may find information on how to install <code class="docutils literal"><span 
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2018, The COBRA Toolbox developers.
+        &copy; Copyright 2017-2026, The COBRA Toolbox developers.
 
     </p>
   </div>
@@ -268,10 +256,9 @@ You may find information on how to install <code class="docutils literal"><span 
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 
@@ -290,5 +277,14 @@ You may find information on how to install <code class="docutils literal"><span 
   </script>
    
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRCMZL1FKK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TRCMZL1FKK');
+  </script>
+    
 </body>
 </html>

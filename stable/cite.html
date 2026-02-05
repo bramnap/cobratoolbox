@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>How to cite &mdash; The COBRA Toolbox</title>
@@ -14,16 +15,12 @@
   
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="_static/img/apple-touch-icon.png">
-  
   
     <link rel="icon" type="image/png" sizes="32x32" href="_static/img/favicon-32x32.png">
   
   
     <link rel="icon" type="image/png" sizes="16x16" href="_static/img/favicon-16x16.png">
   
-  
-    <link rel="mask-icon" href="_static/img/safari-pinned-tab.svg" color="#5bbad5">
   
   
     <link rel="manifest" href="_static/json/manifest.json">
@@ -57,14 +54,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/cobra.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="The COBRA Toolbox" href="index.html"/>
-        <link rel="next" title="Support" href="support.html"/>
-        <link rel="prev" title="How to contribute" href="contributing.html"/> 
+        <link rel="next" title="Citations" href="citations.html"/>
+        <link rel="prev" title="Development Plan" href="plan.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,14 +83,15 @@
           
 
           
-            <a href="index.html">
+            <a href="index.html" class="icon icon-home"> The COBRA Toolbox
           
 
           
-            
-            <img src="https://king.nuigalway.ie/cobratoolbox/img/cobratoolbox_logo_transparent.png" class="logo" alt="cobratoolbox logo" />
+            <img src="/cobratoolbox/stable/_static/img/logo.png" class="logo" alt="cobratoolbox logo" />
           
           </a>
+
+              
           <h1>The COBRA Toolbox</h1>
 
           
@@ -119,14 +121,13 @@
 			    enabled: true
 		    }
 		},
-
-    	template: {
+	template: {
 	    	type: "custom",
 		    method: function(value, item) {
-                return "<span><a href='search.html?q=" + item.name + "&check_keywords=yes&area=default'>" + value + "</a>" + "<a href='_static/../" + item.website_url + "' ><img src='_static/link.svg'/></a></span>";
+                return "<span><a href='_static/../" + item.website_url + "' >" + value + "</a>" + "<a href='_static/../" + item.website_url + "' ><img src='_static/link.svg'/></a></span>";
 		    }
 	    },
-
+		
 		theme: "square"
 
 	};
@@ -146,18 +147,30 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
               </ul>
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using the Toolbox</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">How to contribute</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">How to cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submodules/index.html">Submodules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">How to contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plan.html">Development Plan</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Information</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funding.html">Funding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plan.html">Development Plan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 </ul>
 
           
@@ -179,49 +192,20 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="contents.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>How to cite</li>
-    
-    
+      <li><a href="contents.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">How to cite</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="how-to-cite">
-<h1>How to cite<a class="headerlink" href="#how-to-cite" title="Permalink to this headline">¶</a></h1>
+  <section id="how-to-cite">
+<h1>How to cite<a class="headerlink" href="#how-to-cite" title="Permalink to this heading">¶</a></h1>
 <p>When citing the COBRA Toolbox, it is important to cite the original
 paper where an algorithm was first reported, as well as its
 implementation in the COBRA Toolbox. This is important, because the
@@ -234,11 +218,12 @@ please):</p>
 <p><em>To generate a context-specific model the FASTCORE algorithm [1],
 implemented in The COBRA Toolbox v3.0 [2], was employed.</em></p>
 <blockquote>
-<div>[1] = Vlassis N, Pacheco MP, Sauter T (2014) Fast Reconstruction of
+<div><p>[1] = Vlassis N, Pacheco MP, Sauter T (2014) Fast Reconstruction of
 Compact Context-Specific Metabolic Network Models. PLoS Comput Biol
-10(1): e1003424.</div></blockquote>
+10(1): e1003424.</p>
+</div></blockquote>
 <blockquote>
-<div>[2] Laurent Heirendt &amp; Sylvain Arreckx, Thomas Pfau, Sebastian N.
+<div><p>[2] Laurent Heirendt &amp; Sylvain Arreckx, Thomas Pfau, Sebastian N.
 Mendoza, Anne Richelle, Almut Heinken, Hulda S. Haraldsdottir, Jacek
 Wachowiak, Sarah M. Keating, Vanja Vlasov, Stefania Magnusdottir,
 Chiam Yu Ng, German Preciat, Alise Zagare, Siu H.J. Chan, Maike K.
@@ -255,8 +240,18 @@ A. Saunders, Costas D. Maranas, Nathan E. Lewis, Thomas Sauter,
 Bernhard Ø. Palsson, Ines Thiele, Ronan M.T. Fleming, <strong>Creation and
 analysis of biochemical constraint-based models: the COBRA Toolbox
 v3.0</strong>, Nature Protocols, volume 14, pages 639–702, 2019
-<a class="reference external" href="https://doi.org/10.1038/s41596-018-0098-2">doi.org/10.1038/s41596-018-0098-2</a>.</div></blockquote>
+<a class="reference external" href="https://doi.org/10.1038/s41596-018-0098-2">doi.org/10.1038/s41596-018-0098-2</a>.</p>
+</div></blockquote>
+<p>It is important if you are submitting a paper that depends on the COBRA toolbox to mention a specific release version, and ideally also the git sha-1 hash code that identifies the current commit to make sure that reviewers are using the correct version.</p>
+<p>Example citation:</p>
+<blockquote>
+<div><p>COBRA Toolbox v3.5 ( commit <code class="docutils literal notranslate"><span class="pre">ffd220aa7996b03d5546a7d24d9f8c626749d169</span></code> ) was used for all analyses.</p>
+<p>You can find the release number on the <a class="reference external" href="https://github.com/opencobra/cobratoolbox/releases">Releases page</a>, and the commit SHA-1 hash with the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git rev-parse HEAD</span>
+</pre></div>
 </div>
+</div></blockquote>
+</section>
 
 
            </div>
@@ -268,10 +263,10 @@ v3.0</strong>, Nature Protocols, volume 14, pages 639–702, 2019
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="support.html" class="btn btn-default float-right" title="Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="citations.html" class="btn btn-default float-right" title="Citations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="contributing.html" class="btn btn-default" title="How to contribute" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="plan.html" class="btn btn-default" title="Development Plan" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -280,7 +275,7 @@ v3.0</strong>, Nature Protocols, volume 14, pages 639–702, 2019
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2020, The COBRA Toolbox developers.
+        &copy; Copyright 2017-2026, The COBRA Toolbox developers.
 
     </p>
   </div>
@@ -308,11 +303,9 @@ v3.0</strong>, Nature Protocols, volume 14, pages 639–702, 2019
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
 
   
 

@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Funding &mdash; The COBRA Toolbox</title>
@@ -14,16 +15,12 @@
   
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="_static/img/apple-touch-icon.png">
-  
   
     <link rel="icon" type="image/png" sizes="32x32" href="_static/img/favicon-32x32.png">
   
   
     <link rel="icon" type="image/png" sizes="16x16" href="_static/img/favicon-16x16.png">
   
-  
-    <link rel="mask-icon" href="_static/img/safari-pinned-tab.svg" color="#5bbad5">
   
   
     <link rel="manifest" href="_static/json/manifest.json">
@@ -57,13 +54,16 @@
   
 
   
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/cobra.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="The COBRA Toolbox" href="index.html"/>
-        <link rel="next" title="Development Plan" href="plan.html"/>
         <link rel="prev" title="Contributors" href="contributors.html"/> 
 
   
@@ -82,14 +82,15 @@
           
 
           
-            <a href="index.html">
+            <a href="index.html" class="icon icon-home"> The COBRA Toolbox
           
 
           
-            
-            <img src="https://king.nuigalway.ie/cobratoolbox/img/cobratoolbox_logo_transparent.png" class="logo" alt="cobratoolbox logo" />
+            <img src="/cobratoolbox/stable/_static/img/logo.png" class="logo" alt="cobratoolbox logo" />
           
           </a>
+
+              
           <h1>The COBRA Toolbox</h1>
 
           
@@ -119,14 +120,13 @@
 			    enabled: true
 		    }
 		},
-
-    	template: {
+	template: {
 	    	type: "custom",
 		    method: function(value, item) {
-                return "<span><a href='search.html?q=" + item.name + "&check_keywords=yes&area=default'>" + value + "</a>" + "<a href='_static/../" + item.website_url + "' ><img src='_static/link.svg'/></a></span>";
+                return "<span><a href='_static/../" + item.website_url + "' >" + value + "</a>" + "<a href='_static/../" + item.website_url + "' ><img src='_static/link.svg'/></a></span>";
 		    }
 	    },
-
+		
 		theme: "square"
 
 	};
@@ -146,18 +146,30 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
               </ul>
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using the Toolbox</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">How to contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cite.html">How to cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submodules/index.html">Submodules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">How to contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plan.html">Development Plan</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Information</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cite.html">How to cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Funding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plan.html">Development Plan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 </ul>
 
           
@@ -179,49 +191,20 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="contents.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>Funding</li>
-    
-    
+      <li><a href="contents.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Funding</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="funding">
-<h1>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h1>
+  <section id="funding">
+<h1>Funding<a class="headerlink" href="#funding" title="Permalink to this heading">¶</a></h1>
 <style type="text/css">
   .noBorder {
       border:none !important;
@@ -239,7 +222,7 @@
 
      <tr class="noBorder">
      <td class="noBorderImg" width="50%">
-         <div style="align-center;"><a href="https://www.universiteitleiden.nl/en/science/drug-research/systems-pharmacology/analytical-biosciences-and-metabolomics"><img src="https://king.nuigalway.ie/cobratoolbox/img/UniversiteitLeidenLogo.png" alt="logo for Analytical BioSciences and Metabolomics, Division of Systems Biomedicine and Pharmacology, Leiden University" height="128"></a></div>
+         <div style="align-center;"><a href="https://www.universiteitleiden.nl/en/science/drug-research/systems-pharmacology/analytical-biosciences-and-metabolomics"><img src="/cobratoolbox/stable/_static/img/unileidenLogo.png" alt="logo for Analytical BioSciences and Metabolomics, Division of Systems Biomedicine and Pharmacology, Leiden University" height="128"></a></div>
      </td>
      <td class="noBorder" width="50%">
      Analytical BioSciences and Metabolomics, Division of Systems Biomedicine and Pharmacology, Leiden University.
@@ -251,10 +234,10 @@
 
      <tr class="noBorder">
      <td class="noBorderImg" width="30%">
-         <div style="align-center;"><a href="http://www.sysmedpd.eu"><img src="https://king.nuigalway.ie/cobratoolbox/img/sysmedpd.png" alt="sysmedpd" height="128"></a></div>
+         <div style="align-center;"><a href="http://www.sysmedpd.eu"><img src="/cobratoolbox/stable/_static/img/sysmedpd.png" alt="sysmedpd" height="128"></a></div>
      </td>
      <td class="noBorderImg" width="30%">
-          <div style="align-center;"><a href="http://www.sysmedpd.eu"><img src="https://king.nuigalway.ie/cobratoolbox/img/eu.svg" alt="eu" height="128"></a></div>
+          <div style="align-center;"><a href="http://www.sysmedpd.eu"><img src="/cobratoolbox/stable/_static/img/eu.svg" alt="eu" height="128"></a></div>
      </td>
      <td class="noBorder" width="40%">
      European Union’s Horizon 2020 research and innovation programme under grant agreement No 668738.
@@ -265,7 +248,7 @@
   <table width="100%" class="noBorder">
       <tr class="noBorder">
       <td class="noBorderImg" width="60%">
-          <div style="align-center;"><a href="https://energy.gov"><img src="https://king.nuigalway.ie/cobratoolbox/img/doe.png" alt="US Department of Energy" height="128"></a></div>
+          <div style="align-center;"><a href="https://energy.gov"><img src="/cobratoolbox/stable/_static/img/doe.png" alt="US Department of Energy" height="128"></a></div>
       </td>
       <td class="noBorder" width="40%">
       U.S. Department of Energy, Offices of Advanced Scientific Computing Research and the Biological and Environmental Research as part of the Scientific Discovery Through Advanced Computing program, grant no. DE-SC0010429
@@ -276,7 +259,7 @@
   <table width="100%" class="noBorder">
       <tr class="noBorder">
       <td class="noBorderImg" width="60%">
-          <div style="align-center;"><a href="https://energy.gov"><img src="https://king.nuigalway.ie/cobratoolbox/img/erc.png" alt="European Research Council (ERC)" height="128"></a></div>
+          <div style="align-center;"><a href="https://energy.gov"><img src="/cobratoolbox/stable/_static/img/erc.png" alt="European Research Council (ERC)" height="128"></a></div>
       </td>
       <td class="noBorder" width="40%">
       This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (Grant agreement No. 757922)”
@@ -287,7 +270,7 @@
   <table width="100%" class="noBorder">
       <tr class="noBorder">
       <td class="noBorderImg" width="60%">
-          <div style="align-center;"><a href="http://openmultimed.net"><img src="https://king.nuigalway.ie/cobratoolbox/img/cost.jpg" alt="European Cooperation in Science and Technology (COST)" height="128"></a></div>
+          <div style="align-center;"><a href="http://openmultimed.net"><img src="/cobratoolbox/stable/_static/img/cost.png" alt="European Cooperation in Science and Technology (COST)" height="128"></a></div>
       </td>
       <td class="noBorder" width="40%">
       This project has received funding from the Open Multiscale Systems Medicine (OpenMultiMed), a COST (European Cooperation in Science and Technology) Action,  under the European Union’s Framework Programme Horizon 2020 research and innovation programme (Grant agreement no. CA15120)”
@@ -304,7 +287,7 @@
   Nathan E. Lewis has been supported by NIGMS (R35 GM119850) and the Novo Nordisk Foundation (NNF10CC1016517). Anne Richelle has been supported by the Lilly Innovation Fellows Award.
   </div>
   <br><br>
- </p></div>
+ </p></section>
 
 
            </div>
@@ -316,8 +299,6 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="plan.html" class="btn btn-default float-right" title="Development Plan" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
       
         <a href="contributors.html" class="btn btn-default" title="Contributors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
@@ -328,7 +309,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2020, The COBRA Toolbox developers.
+        &copy; Copyright 2017-2026, The COBRA Toolbox developers.
 
     </p>
   </div>
@@ -356,11 +337,9 @@
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
 
   
 

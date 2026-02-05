@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Development Plan &mdash; The COBRA Toolbox</title>
@@ -14,16 +15,12 @@
   
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="_static/img/apple-touch-icon.png">
-  
   
     <link rel="icon" type="image/png" sizes="32x32" href="_static/img/favicon-32x32.png">
   
   
     <link rel="icon" type="image/png" sizes="16x16" href="_static/img/favicon-16x16.png">
   
-  
-    <link rel="mask-icon" href="_static/img/safari-pinned-tab.svg" color="#5bbad5">
   
   
     <link rel="manifest" href="_static/json/manifest.json">
@@ -57,14 +54,18 @@
   
 
   
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/cobra.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="The COBRA Toolbox" href="index.html"/>
-        <link rel="next" title="Contact" href="contact.html"/>
-        <link rel="prev" title="Funding" href="funding.html"/> 
+        <link rel="next" title="How to cite" href="cite.html"/>
+        <link rel="prev" title="How to contribute" href="contributing.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,14 +83,15 @@
           
 
           
-            <a href="index.html">
+            <a href="index.html" class="icon icon-home"> The COBRA Toolbox
           
 
           
-            
-            <img src="https://king.nuigalway.ie/cobratoolbox/img/cobratoolbox_logo_transparent.png" class="logo" alt="cobratoolbox logo" />
+            <img src="/cobratoolbox/stable/_static/img/logo.png" class="logo" alt="cobratoolbox logo" />
           
           </a>
+
+              
           <h1>The COBRA Toolbox</h1>
 
           
@@ -119,14 +121,13 @@
 			    enabled: true
 		    }
 		},
-
-    	template: {
+	template: {
 	    	type: "custom",
 		    method: function(value, item) {
-                return "<span><a href='search.html?q=" + item.name + "&check_keywords=yes&area=default'>" + value + "</a>" + "<a href='_static/../" + item.website_url + "' ><img src='_static/link.svg'/></a></span>";
+                return "<span><a href='_static/../" + item.website_url + "' >" + value + "</a>" + "<a href='_static/../" + item.website_url + "' ><img src='_static/link.svg'/></a></span>";
 		    }
 	    },
-
+		
 		theme: "square"
 
 	};
@@ -146,18 +147,42 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
               </ul>
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using the Toolbox</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">How to contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cite.html">How to cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submodules/index.html">Submodules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">How to contribute</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development Plan</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#software-development-life-cycle">Software Development Life Cycle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#development-model">Development Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phases">Phases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#roles-and-responsibilities">Roles and Responsibilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tools-and-infrastructure">Tools and Infrastructure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quality-assurance">Quality Assurance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#releases">Releases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cite.html">How to cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funding.html">Funding</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Development Plan</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 </ul>
 
           
@@ -179,49 +204,20 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="contents.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>Development Plan</li>
-    
-    
+      <li><a href="contents.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Development Plan</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="development-plan">
-<h1>Development Plan<a class="headerlink" href="#development-plan" title="Permalink to this headline">¶</a></h1>
+  <section id="development-plan">
+<h1>Development Plan<a class="headerlink" href="#development-plan" title="Permalink to this heading">¶</a></h1>
 <br>
 
 The third version of the COBRA Toolbox was described in  Heirendt et. al. ,
@@ -246,12 +242,74 @@ covered by the contribution guidelines, please contact the lead developer:
 
 <br><br>
 
-<a href="https://www.universiteitleiden.nl/en/staffmembers/ronan-fleming">Ronan M.T. Fleming</a>,
-Analytical BioSciences and Metabolomics,
-Division of Systems Biomedicine and Pharmacology,
-Leiden University.
+<a href="https://www.universityofgalway.ie/remedi/who-we-are/principalinvestigators/ronan-fleming/">Ronan M.T. Fleming</a>,<br>
+School of Medicine, University of Galway, University Rd, Galway, Ireland,<br>
+Digital Metabolic Twin Centre, University of Galway, Galway, Ireland.<br>
 
-<br><br></div>
+<br><br><section id="software-development-life-cycle">
+<span id="sdlc"></span><h2>Software Development Life Cycle<a class="headerlink" href="#software-development-life-cycle" title="Permalink to this heading">¶</a></h2>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h3>
+<p>The COBRA Toolbox is an open-source MATLAB platform for constraint-based
+modeling of biological networks. It supports optimization methods such
+as Flux Balance Analysis (FBA), gene deletion analysis, thermodynamic
+feasibility studies, and multi-scale modeling. To ensure quality,
+reproducibility, and long-term maintainability, we follow a structured
+Software Development Lifecycle (SDLC).</p>
+</section>
+<section id="development-model">
+<h3>Development Model<a class="headerlink" href="#development-model" title="Permalink to this heading">¶</a></h3>
+<p>We use an <strong>iterative and incremental model</strong> focused on reproducibility
+and scientific validation. Each cycle covers planning, design,
+implementation, testing, release, and maintenance. This allows us to
+integrate new methods, optimize existing functionality, and fix issues
+while keeping the software stable.</p>
+</section>
+<section id="phases">
+<h3>Phases<a class="headerlink" href="#phases" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Planning</strong> - Development goals are identified from community feedback, GitHub issues, and the project roadmap.</p></li>
+<li><p><strong>Requirements &amp; Design</strong> - New features are defined with clear acceptance criteria and designed for compatibility with MATLAB and supported solvers.</p></li>
+<li><p><strong>Implementation</strong> - Code is developed in feature branches, documented, and accompanied by tutorials.</p></li>
+<li><p><strong>Testing</strong> - Every contribution is validated by automated tests through our continuous integration (CI) system, with peer review before merging.</p></li>
+<li><p><strong>Release</strong> - Stable versions are periodically published on GitHub. The main branch holds stable releases, while the develop branch contains the latest development work.</p></li>
+<li><p><strong>Maintenance</strong> - Bug fixes, solver updates, and compatibility improvements are applied regularly, with minor releases issued as needed.</p></li>
+</ul>
+</section>
+<section id="roles-and-responsibilities">
+<h3>Roles and Responsibilities<a class="headerlink" href="#roles-and-responsibilities" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Maintainers</strong> oversee quality control and approve merges.</p></li>
+<li><p><strong>Contributors</strong> add features, fix bugs, and provide documentation.</p></li>
+<li><p><strong>Community</strong> members submit issues, feature requests, and pull requests.</p></li>
+</ul>
+</section>
+<section id="tools-and-infrastructure">
+<h3>Tools and Infrastructure<a class="headerlink" href="#tools-and-infrastructure" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Version control</strong>: GitHub (main and develop branches).</p></li>
+<li><p><strong>Continuous Integration</strong>: Automated test suite (<a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/develop/test/testAll.m">testAll</a>) run on pull requests.</p></li>
+<li><p><strong>Documentation</strong>: MATLAB function help text and tutorials, with HTML tutorials generated automatically.</p></li>
+<li><p><strong>Supported solvers</strong>: GLPK, Gurobi, MOSEK, TOMLAB, with CPLEX support limited to older MATLAB versions.</p></li>
+</ul>
+</section>
+<section id="quality-assurance">
+<h3>Quality Assurance<a class="headerlink" href="#quality-assurance" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>All contributions undergo automated testing and code review.</p></li>
+<li><p>Test results are posted on pull requests before merging.</p></li>
+<li><p>Performance profiling and reproducibility checks are part of the validation process.</p></li>
+</ul>
+</section>
+<section id="releases">
+<h3>Releases<a class="headerlink" href="#releases" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Versions follow <strong>Semantic Versioning</strong> (MAJOR.MINOR.PATCH).</p></li>
+<li><p>Each release includes detailed release notes and updated tutorials.</p></li>
+</ul>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -263,10 +321,10 @@ Leiden University.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="contact.html" class="btn btn-default float-right" title="Contact" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="cite.html" class="btn btn-default float-right" title="How to cite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="funding.html" class="btn btn-default" title="Funding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="contributing.html" class="btn btn-default" title="How to contribute" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -275,7 +333,7 @@ Leiden University.
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2020, The COBRA Toolbox developers.
+        &copy; Copyright 2017-2026, The COBRA Toolbox developers.
 
     </p>
   </div>
@@ -303,11 +361,9 @@ Leiden University.
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sphinx_highlight.js"></script>
 
   
 

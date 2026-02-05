@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Documentation guide &mdash; The COBRA Toolbox</title>
@@ -14,16 +15,12 @@
   
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="../_static/img/apple-touch-icon.png">
-  
   
     <link rel="icon" type="image/png" sizes="32x32" href="../_static/img/favicon-32x32.png">
   
   
     <link rel="icon" type="image/png" sizes="16x16" href="../_static/img/favicon-16x16.png">
   
-  
-    <link rel="mask-icon" href="../_static/img/safari-pinned-tab.svg" color="#5bbad5">
   
   
     <link rel="manifest" href="../_static/json/manifest.json">
@@ -57,6 +54,10 @@
   
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/cobra.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
@@ -80,14 +81,15 @@
           
 
           
-            <a href="../index.html">
+            <a href="../index.html" class="icon icon-home"> The COBRA Toolbox
           
 
           
-            
-            <img src="https://king.nuigalway.ie/cobratoolbox/img/logo.png" class="logo" alt="logo"/>
+            <img src="/cobratoolbox/stable/_static/img/logo.png" class="logo" alt="cobratoolbox logo" />
           
           </a>
+
+              
           <h1>The COBRA Toolbox</h1>
 
           
@@ -117,14 +119,13 @@
 			    enabled: true
 		    }
 		},
-
-    	template: {
+	template: {
 	    	type: "custom",
 		    method: function(value, item) {
-                return "<span><a href='../search.html?q=" + item.name + "&check_keywords=yes&area=default'>" + value + "</a>" + "<a href='../_static/../" + item.website_url + "' ><img src='../_static/link.svg'/></a></span>";
+                return "<span><a href='../_static/../" + item.website_url + "' >" + value + "</a>" + "<a href='../_static/../" + item.website_url + "' ><img src='../_static/link.svg'/></a></span>";
 		    }
 	    },
-
+		
 		theme: "square"
 
 	};
@@ -144,14 +145,28 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
               </ul>
-              <ul>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using the Toolbox</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How to contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cite.html">How to cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../submodules/index.html">Submodules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How to contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plan.html">Development Plan</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cite.html">How to cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../funding.html">Funding</a></li>
 </ul>
@@ -175,128 +190,101 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../contents.html">Docs</a> &raquo;</li>
-        
-      <li>Documentation guide</li>
-    
-    
+      <li><a href="../contents.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Documentation guide</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="documentation-guide">
-<h1>Documentation guide<a class="headerlink" href="#documentation-guide" title="Permalink to this headline">¶</a></h1>
+  <section id="documentation-guide">
+<h1>Documentation guide<a class="headerlink" href="#documentation-guide" title="Permalink to this heading">¶</a></h1>
 <p>In order to enable the automatic documentation generation, the header of
-a <code class="docutils literal"><span class="pre">MATLAB</span></code> function has to be formatted properly. The automatic
+a <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> function has to be formatted properly. The automatic
 documentation extracts the commented header of the function (commented
 lines between the function’s signature and the first line of code) based
 on keywords and blocks.</p>
-<p><strong>Rule 1</strong>: There should be 1 free space between the percentage sign <code class="docutils literal"><span class="pre">%</span></code>
+<p><strong>Rule 1</strong>: There should be 1 free space between the percentage sign <code class="docutils literal notranslate"><span class="pre">%</span></code>
 and the text. For instance, a correctly formatted line in the header
 reads:</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">% this is correct</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% this is correct</span>
 </pre></div>
 </div>
 <p>A line in the header that is formatted as follows is <strong>ignored</strong>:</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">%this is not correct (note the space)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%this is not correct (note the space)</span>
 </pre></div>
 </div>
 <p><strong>Rule 2</strong>: After the last line of the header, leave one empty line
 before the body of the function.</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">% This is the end of the header of the function</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% This is the end of the header of the function</span>
 
-<span class="n">x</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c">% the body of the function begins after one empty line</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c">% the body of the function begins after one empty line</span>
 </pre></div>
 </div>
 <p>Importantly, <strong>do not</strong> put a comment above the first line of code, but
 include the comment inline:</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">% This is the end of the header of the function</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% This is the end of the header of the function</span>
 
 <span class="c">% the body of the function begins after one empty line</span>
-<span class="n">x</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><strong>Rule 3</strong>: A line in the header that includes <code class="docutils literal"><span class="pre">..</span></code> after the
+<p><strong>Rule 3</strong>: A line in the header that includes <code class="docutils literal notranslate"><span class="pre">..</span></code> after the
 percentage sign will be <strong>ignored</strong> in the documentation:</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">% .. this line will be ignored</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% .. this line will be ignored</span>
 </pre></div>
 </div>
-<div class="section" id="function-signature">
-<h2>Function signature<a class="headerlink" href="#function-signature" title="Permalink to this headline">¶</a></h2>
+<section id="function-signature">
+<h2>Function signature<a class="headerlink" href="#function-signature" title="Permalink to this heading">¶</a></h2>
 <p>The function signature must be correctly formatted. Leave a space after
-every comma and before and after the equal sign <code class="docutils literal"><span class="pre">=</span></code>. A correctly
+every comma and before and after the equal sign <code class="docutils literal notranslate"><span class="pre">=</span></code>. A correctly
 formatted function signature reads:</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[output1, output2, output3] <span class="p">=</span><span class="w"> </span><span class="nf">someFunction</span><span class="p">(</span>input1, input2, input3<span class="p">)</span><span class="w"> </span><span class="c">% good practice</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[output1, output2, output3] = someFunction</span><span class="p">(</span>input1, input2, input3<span class="p">)</span><span class="w"> </span><span class="c">% good practice</span>
 </pre></div>
 </div>
 <p>A function signature that is not formatted properly throws an <strong>error</strong>
 during the automatic documentation generation:</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[ output1,output2,output3 ]<span class="p">=</span><span class="nf">someFunction</span><span class="p">(</span> input1,input2,input3 <span class="p">)</span><span class="w"> </span><span class="c">% bad practice</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[ output1,output2,output3 ]=someFunction</span><span class="p">(</span> input1,input2,input3 <span class="p">)</span><span class="w"> </span><span class="c">% bad practice</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="function-description">
-<h2>Function description<a class="headerlink" href="#function-description" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="function-description">
+<h2>Function description<a class="headerlink" href="#function-description" title="Permalink to this heading">¶</a></h2>
 <p>The description of the function is a brief explanation of the purpose of
 the function. The description of the function may extend over several
 lines. However, try to keep the explanations as brief as possible.</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[output1, output2, output3] <span class="p">=</span><span class="w"> </span><span class="nf">someFunction</span><span class="p">(</span>input1, input2, input3<span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[output1, output2, output3] = someFunction</span><span class="p">(</span>input1, input2, input3<span class="p">)</span>
 <span class="c">% This is a description of the function that helps to understand how the function works</span>
 <span class="c">% Here the description continues, then we leave an empty comment line</span>
 <span class="c">%</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this heading">¶</a></h2>
 <p>The automatic documentation software relies on keywords to properly
 format the documented function. A keyword also defines the start of a
 block with the header of a function. Main keywords include:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">USAGE:</span></code>: block for defining how to use the function</li>
-<li><code class="docutils literal"><span class="pre">INPUT:</span></code> or <code class="docutils literal"><span class="pre">INPUTS:</span></code>: block with input argument(s)</li>
-<li><code class="docutils literal"><span class="pre">OUTPUT:</span></code> or <code class="docutils literal"><span class="pre">OUTPUTS:</span></code>: block with output argument(s)</li>
-<li><code class="docutils literal"><span class="pre">EXAMPLE:</span></code>: block with example code (formatted <code class="docutils literal"><span class="pre">MATLAB</span></code> syntax)</li>
-<li><code class="docutils literal"><span class="pre">NOTE:</span></code>: highlighted box with text</li>
-<li><code class="docutils literal"><span class="pre">Author:</span></code>: list with author(s)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">USAGE:</span></code>: block for defining how to use the function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INPUT:</span></code> or <code class="docutils literal notranslate"><span class="pre">INPUTS:</span></code>: block with input argument(s)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OUTPUT:</span></code> or <code class="docutils literal notranslate"><span class="pre">OUTPUTS:</span></code>: block with output argument(s)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXAMPLE:</span></code>: block with example code (formatted <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> syntax)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NOTE:</span></code>: highlighted box with text</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Author:</span></code>: list with author(s)</p></li>
 </ul>
 <p>Each of them must be followed by non-empty lines and should be separated
 from the next block by an empty line.</p>
 <p>All keywords are optional. For instance, if a function does not have any
-input arguments, the keyword <code class="docutils literal"><span class="pre">INPUTS:</span></code> can be omitted.</p>
+input arguments, the keyword <code class="docutils literal notranslate"><span class="pre">INPUTS:</span></code> can be omitted.</p>
 <p>Any line of the block must be indented by 4 spaces after the comment
-sign <code class="docutils literal"><span class="pre">%</span></code>:</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">% INPUTS:</span>
+sign <code class="docutils literal notranslate"><span class="pre">%</span></code>:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% INPUTS:</span>
 <span class="c">%    input1:     Description of input1</span>
 <span class="c">%    input2:     Description of input2</span>
 <span class="c">% input3:    Description &lt;-- this is bad practice</span>
@@ -306,12 +294,12 @@ sign <code class="docutils literal"><span class="pre">%</span></code>:</p>
 </pre></div>
 </div>
 <p>If the indentation differs, there will be an error.</p>
-<p class="rubric">Keyword <code class="docutils literal"><span class="pre">USAGE:</span></code></p>
-<p>In the block starting with the keyword <code class="docutils literal"><span class="pre">USAGE:</span></code>, the function’s
+<p class="rubric">Keyword <code class="docutils literal notranslate"><span class="pre">USAGE:</span></code></p>
+<p>In the block starting with the keyword <code class="docutils literal notranslate"><span class="pre">USAGE:</span></code>, the function’s
 signature must be given in order to show how the function should be
 used. It is important to leave one empty line before the keyword
-<code class="docutils literal"><span class="pre">USAGE:</span></code>, after the keyword, and after the function’s signature.</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">% the end of the description</span>
+<code class="docutils literal notranslate"><span class="pre">USAGE:</span></code>, after the keyword, and after the function’s signature.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% the end of the description</span>
 <span class="c">%</span>
 <span class="c">% USAGE:</span>
 <span class="c">%</span>
@@ -320,14 +308,14 @@ used. It is important to leave one empty line before the keyword
 <span class="c">% here the other section can begin</span>
 </pre></div>
 </div>
-<p class="rubric">Keyword <code class="docutils literal"><span class="pre">INPUT:</span></code> and <code class="docutils literal"><span class="pre">OUTPUT:</span></code></p>
-<p>The arguments declared in the blocks: <code class="docutils literal"><span class="pre">INPUT:</span></code>, <code class="docutils literal"><span class="pre">INPUTS:</span></code>,
-<code class="docutils literal"><span class="pre">OUTPUT:</span></code> and <code class="docutils literal"><span class="pre">OUTPUTS:</span></code> must be followed by a colon <code class="docutils literal"><span class="pre">:</span></code> before
+<p class="rubric">Keyword <code class="docutils literal notranslate"><span class="pre">INPUT:</span></code> and <code class="docutils literal notranslate"><span class="pre">OUTPUT:</span></code></p>
+<p>The arguments declared in the blocks: <code class="docutils literal notranslate"><span class="pre">INPUT:</span></code>, <code class="docutils literal notranslate"><span class="pre">INPUTS:</span></code>,
+<code class="docutils literal notranslate"><span class="pre">OUTPUT:</span></code> and <code class="docutils literal notranslate"><span class="pre">OUTPUTS:</span></code> must be followed by a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> before
 the argument description is provided.</p>
 <p>The indentation between the argument (with colon) and the description
 should be at least 4 spaces, so that all argument descriptions are
 aligned.</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">% INPUTS:</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% INPUTS:</span>
 <span class="c">%    input1:     Description of input1 &lt;-- good practice</span>
 <span class="c">%    input2      No colon &lt;-- bad practice</span>
 <span class="c">%    input3: Not enough distance (4+ spaces) &lt;-- bad practice</span>
@@ -338,15 +326,15 @@ aligned.</p>
 <span class="c">%    output2:    Description begins too soon &lt;-- bad practice</span>
 </pre></div>
 </div>
-<p>For a <code class="docutils literal"><span class="pre">structure</span></code> argument, it is possible to list its fields. An
-empty line is added after the <code class="docutils literal"><span class="pre">structure</span></code> argument. Then, in the next
+<p>For a <code class="docutils literal notranslate"><span class="pre">structure</span></code> argument, it is possible to list its fields. An
+empty line is added after the <code class="docutils literal notranslate"><span class="pre">structure</span></code> argument. Then, in the next
 line, the field is written aligned with the description of the
-<code class="docutils literal"><span class="pre">structure</span></code> <strong>plus 2 extra spaces</strong>.</p>
-<p>The field is listed beginning as <code class="docutils literal"><span class="pre">*</span> <span class="pre">.field</span> <span class="pre">-</span> <span class="pre">description</span></code> (note the
-space between <code class="docutils literal"><span class="pre">*</span></code> and <code class="docutils literal"><span class="pre">.</span></code>). It is not necessary to leave an empty
+<code class="docutils literal notranslate"><span class="pre">structure</span></code> <strong>plus 2 extra spaces</strong>.</p>
+<p>The field is listed beginning as <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">.field</span> <span class="pre">-</span> <span class="pre">description</span></code> (note the
+space between <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">.</span></code>). It is not necessary to leave an empty
 line after listing fields and writing the next argument. The following
 illustrates how to list a structure with its fields:</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">% OUTPUT:</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% OUTPUT:</span>
 <span class="c">%    output:    output argument with fields:</span>
 <span class="c">%</span>
 <span class="c">%                 * .field1 - first field of the structure.</span>
@@ -358,21 +346,21 @@ illustrates how to list a structure with its fields:</p>
 <span class="c">%    next:      next argument can be added without empty line</span>
 </pre></div>
 </div>
-<p>It is also possible to replace <code class="docutils literal"><span class="pre">*</span></code> with a numbered list. You can use
-numbers followed by a dot (e.g., <code class="docutils literal"><span class="pre">1.</span></code>) instead of <code class="docutils literal"><span class="pre">*</span> <span class="pre">.</span></code>.</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">% OPTIONAL INPUT:</span>
+<p>It is also possible to replace <code class="docutils literal notranslate"><span class="pre">*</span></code> with a numbered list. You can use
+numbers followed by a dot (e.g., <code class="docutils literal notranslate"><span class="pre">1.</span></code>) instead of <code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">.</span></code>.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% OPTIONAL INPUT:</span>
 <span class="c">%    input:    optional input argument with fields:</span>
 <span class="c">%</span>
 <span class="c">%                1. first element of a numbered list</span>
 <span class="c">%                2. second element of a numbered list</span>
 </pre></div>
 </div>
-<p class="rubric">Keyword <code class="docutils literal"><span class="pre">EXAMPLE:</span></code></p>
-<p>A common usage example can be included in the <code class="docutils literal"><span class="pre">EXAMPLE:</span></code> block. Code
-included in this block will be formatted as <code class="docutils literal"><span class="pre">MATLAB</span></code> formatted code.
-Leave one empty line before the keyword <code class="docutils literal"><span class="pre">EXAMPLE:</span></code>, after the keyword,
+<p class="rubric">Keyword <code class="docutils literal notranslate"><span class="pre">EXAMPLE:</span></code></p>
+<p>A common usage example can be included in the <code class="docutils literal notranslate"><span class="pre">EXAMPLE:</span></code> block. Code
+included in this block will be formatted as <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> formatted code.
+Leave one empty line before the keyword <code class="docutils literal notranslate"><span class="pre">EXAMPLE:</span></code>, after the keyword,
 and after the properly indented (4 spaces) code snippet.</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">% the previous block ends here</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% the previous block ends here</span>
 <span class="c">%</span>
 <span class="c">% EXAMPLE:</span>
 <span class="c">%</span>
@@ -382,15 +370,15 @@ and after the properly indented (4 spaces) code snippet.</p>
 <span class="c">% another block begins here</span>
 </pre></div>
 </div>
-<p class="rubric">Keyword <code class="docutils literal"><span class="pre">NOTE:</span></code></p>
+<p class="rubric">Keyword <code class="docutils literal notranslate"><span class="pre">NOTE:</span></code></p>
 <p>Important information, such as common errors, can be included in the
-block that starts with the keyword <code class="docutils literal"><span class="pre">NOTE:</span></code>. A <code class="docutils literal"><span class="pre">NOTE:</span></code> block is
+block that starts with the keyword <code class="docutils literal notranslate"><span class="pre">NOTE:</span></code>. A <code class="docutils literal notranslate"><span class="pre">NOTE:</span></code> block is
 formatted in a dedicated and highlighted box in the documentation.</p>
-<p>Leave one empty line before the keyword <code class="docutils literal"><span class="pre">NOTE:</span></code>, after the keyword,
+<p>Leave one empty line before the keyword <code class="docutils literal notranslate"><span class="pre">NOTE:</span></code>, after the keyword,
 and after the properly indented text (indent of 4 spaces).</p>
 <p>Normally formatted text can be left at the with one space after the
-comment sign. An example of a <code class="docutils literal"><span class="pre">NOTE:</span></code> block reads:</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">%</span>
+comment sign. An example of a <code class="docutils literal notranslate"><span class="pre">NOTE:</span></code> block reads:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%</span>
 <span class="c">% NOTE:</span>
 <span class="c">%</span>
 <span class="c">%    This is a note that contains a important information.</span>
@@ -400,33 +388,33 @@ comment sign. An example of a <code class="docutils literal"><span class="pre">N
 <span class="c">% only relevant to the code itself</span>
 </pre></div>
 </div>
-<p class="rubric">Keyword <code class="docutils literal"><span class="pre">Author:</span></code> or <code class="docutils literal"><span class="pre">Author(s):</span></code></p>
-<p>In the <code class="docutils literal"><span class="pre">Author(s)</span></code> block, the author(s) that have written or
+<p class="rubric">Keyword <code class="docutils literal notranslate"><span class="pre">Author:</span></code> or <code class="docutils literal notranslate"><span class="pre">Author(s):</span></code></p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Author(s)</span></code> block, the author(s) that have written or
 contributed to the function are listed. Authors are not shown in the
-documentation itself, so the keyword is preceded by <code class="docutils literal"><span class="pre">..</span></code>. List 1
+documentation itself, so the keyword is preceded by <code class="docutils literal notranslate"><span class="pre">..</span></code>. List 1
 author as follows:</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">%</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%</span>
 <span class="c">% .. Author: - Name, date, additional information if needed</span>
 
-<span class="n">x</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c">% here the body of the function begins</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c">% here the body of the function begins</span>
 </pre></div>
 </div>
 <p>If there are 2 or more authors, format as follows:</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="c">%</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%</span>
 <span class="c">% .. Authors:</span>
 <span class="c">%       - Name1, date, additional information if needed</span>
 <span class="c">%       - Name2, date, additional information if needed</span>
 
-<span class="n">x</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c">% here the body of the function begins</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c">% here the body of the function begins</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h2>
 <p>A complete example of a function is provided here. Please remember that
 colons, indentations, and keywords are important to guarantee pretty
 formatting.</p>
-<div class="highlight-matlab"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[output1, output2] <span class="p">=</span><span class="w"> </span><span class="nf">someFunction</span><span class="p">(</span>input1, input2, input3, input4<span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[output1, output2] = someFunction</span><span class="p">(</span>input1, input2, input3, input4<span class="p">)</span>
 <span class="c">% This is a description of the function that helps understand how the function works</span>
 <span class="c">% Here the description continues, then we leave an empty comment line</span>
 <span class="c">%</span>
@@ -465,11 +453,11 @@ formatting.</p>
 <span class="c">%</span>
 <span class="c">% .. Author: - Name, date, some information</span>
 
-<span class="n">x</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c">% here the body of the function begins</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c">% here the body of the function begins</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -484,7 +472,7 @@ formatting.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2018, The COBRA Toolbox developers.
+        &copy; Copyright 2017-2026, The COBRA Toolbox developers.
 
     </p>
   </div>
@@ -512,10 +500,9 @@ formatting.</p>
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 
@@ -534,5 +521,14 @@ formatting.</p>
   </script>
    
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRCMZL1FKK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TRCMZL1FKK');
+  </script>
+    
 </body>
 </html>

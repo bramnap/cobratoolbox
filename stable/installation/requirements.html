@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Requirements &mdash; The COBRA Toolbox</title>
@@ -14,16 +15,12 @@
   
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="../_static/img/apple-touch-icon.png">
-  
   
     <link rel="icon" type="image/png" sizes="32x32" href="../_static/img/favicon-32x32.png">
   
   
     <link rel="icon" type="image/png" sizes="16x16" href="../_static/img/favicon-16x16.png">
   
-  
-    <link rel="mask-icon" href="../_static/img/safari-pinned-tab.svg" color="#5bbad5">
   
   
     <link rel="manifest" href="../_static/json/manifest.json">
@@ -57,6 +54,10 @@
   
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/cobra.css" type="text/css" />
+  
 
   
         <link rel="index" title="Index"
@@ -80,14 +81,15 @@
           
 
           
-            <a href="../index.html">
+            <a href="../index.html" class="icon icon-home"> The COBRA Toolbox
           
 
           
-            
-            <img src="https://king.nuigalway.ie/cobratoolbox/img/logo.png" class="logo" alt="logo"/>
+            <img src="/cobratoolbox/stable/_static/img/logo.png" class="logo" alt="cobratoolbox logo" />
           
           </a>
+
+              
           <h1>The COBRA Toolbox</h1>
 
           
@@ -117,14 +119,13 @@
 			    enabled: true
 		    }
 		},
-
-    	template: {
+	template: {
 	    	type: "custom",
 		    method: function(value, item) {
-                return "<span><a href='../search.html?q=" + item.name + "&check_keywords=yes&area=default'>" + value + "</a>" + "<a href='../_static/../" + item.website_url + "' ><img src='../_static/link.svg'/></a></span>";
+                return "<span><a href='../_static/../" + item.website_url + "' >" + value + "</a>" + "<a href='../_static/../" + item.website_url + "' ><img src='../_static/link.svg'/></a></span>";
 		    }
 	    },
-
+		
 		theme: "square"
 
 	};
@@ -144,14 +145,28 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
               </ul>
-              <ul>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using the Toolbox</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How to contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cite.html">How to cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../submodules/index.html">Submodules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">How to contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plan.html">Development Plan</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cite.html">How to cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../funding.html">Funding</a></li>
 </ul>
@@ -175,113 +190,86 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../contents.html">Docs</a> &raquo;</li>
-        
-      <li>Requirements</li>
-    
-    
+      <li><a href="../contents.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Requirements</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="requirements">
-<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="can-i-check-if-everything-is-properly-set-up-before-i-start">
-<h2>Can I check if everything is properly set up before I start?<a class="headerlink" href="#can-i-check-if-everything-is-properly-set-up-before-i-start" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="matlab">
-<h3>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h3>
-<p>Please ensure that you have a compatible and working <code class="docutils literal"><span class="pre">MATLAB</span></code>
+  <section id="requirements">
+<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h1>
+<section id="can-i-check-if-everything-is-properly-set-up-before-i-start">
+<h2>Can I check if everything is properly set up before I start?<a class="headerlink" href="#can-i-check-if-everything-is-properly-set-up-before-i-start" title="Permalink to this heading">¶</a></h2>
+<section id="matlab">
+<h3>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this heading">¶</a></h3>
+<p>Please ensure that you have a compatible and working <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>
 <a class="reference external" href="https://nl.mathworks.com/help/install/">installation</a>.
 The list of compatible solvers is available <a class="reference external" href="https://opencobra.github.io/cobratoolbox/docs/compatibility.html">here</a>.</p>
 <p>No support is provided for versions older than R2014b.
-<code class="docutils literal"><span class="pre">MATLAB</span></code> is released on a twice-yearly schedule. After the latest release (version b),
+<code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> is released on a twice-yearly schedule. After the latest release (version b),
 it may be a couple of months before certain methods with dependencies
-on other software become compatible. For example, the latest releases of <code class="docutils literal"><span class="pre">MATLAB</span></code>
+on other software become compatible. For example, the latest releases of <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>
 may not be compatible with the existing solver interfaces,
-necessitating an update of the <code class="docutils literal"><span class="pre">MATLAB</span></code> interface provided by the solver developers,
+necessitating an update of the <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> interface provided by the solver developers,
 or an update of the COBRA Toolbox, or both.</p>
-</div>
-<div class="section" id="git">
-<h3>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
-<p>You can check if you have a working installation of <code class="docutils literal"><span class="pre">git</span></code> by typing in
-the <code class="docutils literal"><span class="pre">Terminal</span></code> (on <code class="docutils literal"><span class="pre">linux</span></code> and <code class="docutils literal"><span class="pre">macOS</span></code>) or <code class="docutils literal"><span class="pre">cmd</span></code> (in
-<code class="docutils literal"><span class="pre">Windows</span></code>, not <code class="docutils literal"><span class="pre">Git</span> <span class="pre">Bash</span></code>):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> git --version
+</section>
+<section id="git">
+<h3>git<a class="headerlink" href="#git" title="Permalink to this heading">¶</a></h3>
+<p>You can check if you have a working installation of <code class="docutils literal notranslate"><span class="pre">git</span></code> by typing in
+the <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> (on <code class="docutils literal notranslate"><span class="pre">linux</span></code> and <code class="docutils literal notranslate"><span class="pre">macOS</span></code>) or <code class="docutils literal notranslate"><span class="pre">cmd</span></code> (in
+<code class="docutils literal notranslate"><span class="pre">Windows</span></code>, not <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">Bash</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>--version
 </pre></div>
 </div>
-<p>If installed properly, this will return <code class="docutils literal"><span class="pre">git</span> <span class="pre">version</span> <span class="pre">2.13.1</span> <span class="pre">[...]</span></code> or
+<p>If installed properly, this will return <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">version</span> <span class="pre">2.13.1</span> <span class="pre">[...]</span></code> or
 similar with another version number.</p>
-</div>
-<div class="section" id="curl">
-<h3>curl<a class="headerlink" href="#curl" title="Permalink to this headline">¶</a></h3>
-<p>You can check if you have a working installation of <code class="docutils literal"><span class="pre">curl</span></code> by typing
-in the terminal (<code class="docutils literal"><span class="pre">cmd</span></code> on Windows, not <code class="docutils literal"><span class="pre">Git</span> <span class="pre">Bash</span></code>):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> curl --version
+</section>
+<section id="curl">
+<h3>curl<a class="headerlink" href="#curl" title="Permalink to this heading">¶</a></h3>
+<p>You can check if you have a working installation of <code class="docutils literal notranslate"><span class="pre">curl</span></code> by typing
+in the terminal (<code class="docutils literal notranslate"><span class="pre">cmd</span></code> on Windows, not <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">Bash</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>curl<span class="w"> </span>--version
 </pre></div>
 </div>
-<p>which will return <code class="docutils literal"><span class="pre">curl</span> <span class="pre">7.51.0</span> <span class="pre">[...]</span></code> or similar with another version
-number if installed properly. If you encounter any issues with <code class="docutils literal"><span class="pre">curl</span></code>, please
+<p>which will return <code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">7.51.0</span> <span class="pre">[...]</span></code> or similar with another version
+number if installed properly. If you encounter any issues with <code class="docutils literal notranslate"><span class="pre">curl</span></code>, please
 post in our <a class="reference external" href="https://groups.google.com/forum/#!forum/cobra-toolbox"><img alt="ImageLink" src="https://img.shields.io/badge/COBRA-forum-blue.svg" /></a>.</p>
-</div>
-</div>
-<div class="section" id="what-if-my-system-is-not-properly-configured">
-<h2>What if my system is not properly configured?<a class="headerlink" href="#what-if-my-system-is-not-properly-configured" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="linux-ubuntu-or-debian">
-<h3>Linux (Ubuntu or Debian)<a class="headerlink" href="#linux-ubuntu-or-debian" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt-get install git-all curl
+</section>
+</section>
+<section id="what-if-my-system-is-not-properly-configured">
+<h2>What if my system is not properly configured?<a class="headerlink" href="#what-if-my-system-is-not-properly-configured" title="Permalink to this heading">¶</a></h2>
+<section id="linux-ubuntu-or-debian">
+<h3>Linux (Ubuntu or Debian)<a class="headerlink" href="#linux-ubuntu-or-debian" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git-all<span class="w"> </span>curl
 </pre></div>
 </div>
 <p>There is a known issue on Matlab 2016b (or earlier) with a default library that is used to access web resources. Please have a look at the <a class="reference external" href="https://opencobra.github.io/cobratoolbox/stable/faq.html#on-linux-matlab-suddenly-crashes-without-any-error">FAQ</a>.</p>
-</div>
-<div class="section" id="macos">
-<h3>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
-<p>In order to install <code class="docutils literal"><span class="pre">git</span></code>, install the <a class="reference external" href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/">Xcode Command Line
+</section>
+<section id="macos">
+<h3>macOS<a class="headerlink" href="#macos" title="Permalink to this heading">¶</a></h3>
+<p>In order to install <code class="docutils literal notranslate"><span class="pre">git</span></code>, install the <a class="reference external" href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/">Xcode Command Line
 Tools</a>.
-For <code class="docutils literal"><span class="pre">curl</span></code>, follow the instructions
+For <code class="docutils literal notranslate"><span class="pre">curl</span></code>, follow the instructions
 <a class="reference external" href="http://macappstore.org/curl/">here</a>.</p>
-</div>
-<div class="section" id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
-<p>Please download the <code class="docutils literal"><span class="pre">git</span></code> tools for Windows from
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">¶</a></h3>
+<p>Please download the <code class="docutils literal notranslate"><span class="pre">git</span></code> tools for Windows from
 <a class="reference external" href="https://git-scm.com/download/win">here</a>. During the installation
 process, please ensure that you select <strong>Use Git Bash and optional Unix
 tools from the Windows Command prompt</strong>. In addition, please make sure
 that you select <strong>Checkout as-is, commit Unix-style line endings</strong>.</p>
 <div align="center">
-<img src="https://king.nuigalway.ie/cobratoolbox/img/installation_git_windows_0.png" height="280px" alt="git windows">&nbsp;&nbsp;&nbsp;<img src="https://king.nuigalway.ie/cobratoolbox/img/installation_git_windows_1.png" height="280px" alt="git windows">.
-</div></div>
-</div>
-</div>
+<img src="/cobratoolbox/stable/_static/img/installation_git_windows_0.png" height="280px" alt="git windows">&nbsp;&nbsp;&nbsp;<img src="/cobratoolbox/stable/_static/img/installation_git_windows_1.png" height="280px" alt="git windows">.
+</div></section>
+</section>
+</section>
 
 
            </div>
@@ -296,7 +284,7 @@ that you select <strong>Checkout as-is, commit Unix-style line endings</strong>.
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017-2018, The COBRA Toolbox developers.
+        &copy; Copyright 2017-2026, The COBRA Toolbox developers.
 
     </p>
   </div>
@@ -324,10 +312,9 @@ that you select <strong>Checkout as-is, commit Unix-style line endings</strong>.
             SOURCELINK_SUFFIX: '.txt'
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 
   
 
@@ -346,5 +333,14 @@ that you select <strong>Checkout as-is, commit Unix-style line endings</strong>.
   </script>
    
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRCMZL1FKK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TRCMZL1FKK');
+  </script>
+    
 </body>
 </html>
