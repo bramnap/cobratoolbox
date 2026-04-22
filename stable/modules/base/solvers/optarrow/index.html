@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Lindo &mdash; The COBRA Toolbox</title>
+  <title>Optarrow &mdash; The COBRA Toolbox</title>
   
 
   
@@ -65,8 +65,8 @@
         <link rel="search" title="Search" href="../../../../search.html"/>
     <link rel="top" title="The COBRA Toolbox" href="../../../../index.html"/>
         <link rel="up" title="Solvers" href="../index.html"/>
-        <link rel="next" title="Install" href="../../install/index.html"/>
-        <link rel="prev" title="Gams" href="../gams/index.html"/> 
+        <link rel="next" title="Getsetsolver" href="../getSetSolver/index.html"/>
+        <link rel="prev" title="Gurobi" href="../gurobi/index.html"/> 
 
   
   <script src="../../../../_static/js/modernizr.min.js"></script>
@@ -167,7 +167,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html">Solvers</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../rescale/index.html">Rescale</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../gurobi/index.html">Gurobi</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../optarrow/index.html">Optarrow</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Optarrow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../getSetSolver/index.html">Getsetsolver</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cplex/index.html">Cplex</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../entropicFBA/index.html">Entropicfba</a></li>
@@ -180,7 +180,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../param/index.html">Param</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../NLP/index.html">Nlp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../gams/index.html">Gams</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Lindo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../lindo/index.html">Lindo</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/index.html">Install</a></li>
@@ -235,7 +235,7 @@
           <li class="breadcrumb-item"><a href="../../../index.html">Functions</a></li>
           <li class="breadcrumb-item"><a href="../../index.html">Base</a></li>
           <li class="breadcrumb-item"><a href="../index.html">Solvers</a></li>
-      <li class="breadcrumb-item active">Lindo</li>
+      <li class="breadcrumb-item active">Optarrow</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -244,44 +244,103 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="lindo">
-<span id="id1"></span><h1>Lindo<a class="headerlink" href="#lindo" title="Permalink to this heading">¶</a></h1>
-<span class="target" id="module-src.base.solvers.lindo"></span><dl class="mat function">
-<dt class="sig sig-object mat" id="src.base.solvers.lindo.solveCobraLPLindo">
-<span class="sig-name descname"><span class="pre">solveCobraLPLindo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">A</span></em>, <em class="sig-param"><span class="pre">b</span></em>, <em class="sig-param"><span class="pre">c</span></em>, <em class="sig-param"><span class="pre">csense</span></em>, <em class="sig-param"><span class="pre">lb</span></em>, <em class="sig-param"><span class="pre">ub</span></em>, <em class="sig-param"><span class="pre">osense</span></em>, <em class="sig-param"><span class="pre">primalOnlyFlag</span></em>, <em class="sig-param"><span class="pre">oldAPIFlag</span></em>, <em class="sig-param"><span class="pre">verbLevel</span></em>, <em class="sig-param"><span class="pre">method</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/base/solvers/lindo/solveCobraLPLindo.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.base.solvers.lindo.solveCobraLPLindo" title="Permalink to this definition">¶</a></dt>
-<dd><p>Solves a LP problem using Lindo</p>
+  <section id="optarrow">
+<span id="id1"></span><h1>Optarrow<a class="headerlink" href="#optarrow" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="module-src.base.solvers.optarrow"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.base.solvers.optarrow.solveCobraLPOptArrow">
+<span class="sig-name descname"><span class="pre">solveCobraLPOptArrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">LPproblem</span></em>, <em class="sig-param"><span class="pre">problemTypeParams</span></em>, <em class="sig-param"><span class="pre">solverParams</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/base/solvers/optarrow/solveCobraLPOptArrow.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.base.solvers.optarrow.solveCobraLPOptArrow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve a COBRA LP problem through the OptArrow backend</p>
 <dl class="field-list simple">
 <dt class="field-odd">USAGE<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>[obj, x, y, w, s, solStatus] = solveCobraLPLindo</strong> (<em>A, b, c, csense, lb, ub, osense, primalOnlyFlag, oldAPIFlag, verbLevel, method</em>)</p>
+<dd class="field-odd"><p><strong>result = solveCobraLPOptArrow</strong> (<em>LPproblem, problemTypeParams, solverParams</em>)</p>
 </dd>
 <dt class="field-even">INPUTS<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>A</strong> – LHS matrix</p></li>
-<li><p><strong>b</strong> – RHS vector</p></li>
-<li><p><strong>c</strong> – Objective coeff vector</p></li>
+<li><p><strong>LPproblem</strong> – COBRA LP problem structure</p></li>
+<li><p><strong>problemTypeParams</strong> – structure of problem-type parameters</p></li>
+<li><p><strong>solverParams</strong> – structure of solver parameters</p></li>
 </ul>
 </dd>
-<dt class="field-odd">OPTIONAL INPUTS<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>csense</strong> – Constraint senses</p></li>
-<li><p><strong>lb</strong> – Lower bound vector</p></li>
-<li><p><strong>ub</strong> – Upper bound vector</p></li>
-<li><p><strong>osense</strong> – Objective sense</p></li>
-<li><p><strong>primalOnlyFlag</strong> – Get the primal soln only</p></li>
-<li><p><strong>oldAPIFLag</strong> – should be true if Lindo API &lt;2.0 is used and false for newer versions of the API</p></li>
-<li><p><strong>verbLevel</strong> – verbose level</p></li>
-<li><p><strong>method</strong> – default = 0, chooses the algorithm</p></li>
-</ul>
+<dt class="field-odd">OUTPUT<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>result</strong> – structure with fields compatible with the
+<cite>solveCobraLP</cite> solver dispatch</p>
 </dd>
-<dt class="field-even">OUTPUTS<span class="colon">:</span></dt>
+</dl>
+<p>This helper keeps the OptArrow integration downstream from the generic
+COBRA solver interface. It supports:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a CLI-backed local Python path</p></li>
+<li><p>an HTTP path through the generic OptArrow MATLAB client</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.base.solvers.optarrow.solveCobraQPOptArrow">
+<span class="sig-name descname"><span class="pre">solveCobraQPOptArrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">QPproblem</span></em>, <em class="sig-param"><span class="pre">problemTypeParams</span></em>, <em class="sig-param"><span class="pre">solverParams</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/base/solvers/optarrow/solveCobraQPOptArrow.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.base.solvers.optarrow.solveCobraQPOptArrow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve a COBRA QP problem through the OptArrow backend</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>result = solveCobraQPOptArrow</strong> (<em>QPproblem, problemTypeParams, solverParams</em>)</p>
+</dd>
+<dt class="field-even">INPUTS<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>obj</strong> – Objective value</p></li>
-<li><p><strong>x</strong> – <cite>n</cite> vector: value of each variable in x</p></li>
-<li><p><strong>y</strong> – <cite>m</cite> vector: dual variables</p></li>
-<li><p><strong>w</strong> – vector of reduced costs</p></li>
-<li><p><strong>s</strong> – <cite>m</cite> vector: value of each slack in s</p></li>
-<li><p><strong>solStatus</strong> – Original status returned by the specific solver</p></li>
+<li><p><strong>QPproblem</strong> – COBRA QP problem structure</p></li>
+<li><p><strong>problemTypeParams</strong> – structure of problem-type parameters</p></li>
+<li><p><strong>solverParams</strong> – structure of solver parameters</p></li>
 </ul>
+</dd>
+<dt class="field-odd">OUTPUT<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>result</strong> – structure with fields compatible with the
+<cite>solveCobraQP</cite> solver dispatch</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.base.solvers.optarrow.testOptArrowBackend">
+<span class="sig-name descname"><span class="pre">testOptArrowBackend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/base/solvers/optarrow/testOptArrowBackend.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.base.solvers.optarrow.testOptArrowBackend" title="Permalink to this definition">¶</a></dt>
+<dd><p>testOptArrowBackend Minimal MATLAB smoke test for the COBRA OptArrow LP backend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>testOptArrowBackend()</strong></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.base.solvers.optarrow.testOptArrowEcoliCoreFBA">
+<span class="sig-name descname"><span class="pre">testOptArrowEcoliCoreFBA</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/base/solvers/optarrow/testOptArrowEcoliCoreFBA.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.base.solvers.optarrow.testOptArrowEcoliCoreFBA" title="Permalink to this definition">¶</a></dt>
+<dd><p>testOptArrowEcoliCoreFBA End-to-end COBRA FBA test on ecoli_core using OptArrow.</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>testOptArrowEcoliCoreFBA()</strong></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.base.solvers.optarrow.testOptArrowEcoliCoreHttpFBA">
+<span class="sig-name descname"><span class="pre">testOptArrowEcoliCoreHttpFBA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">endpoint</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/base/solvers/optarrow/testOptArrowEcoliCoreHttpFBA.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.base.solvers.optarrow.testOptArrowEcoliCoreHttpFBA" title="Permalink to this definition">¶</a></dt>
+<dd><p>testOptArrowEcoliCoreHttpFBA End-to-end COBRA FBA test on ecoli_core via OptArrow HTTP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>testOptArrowEcoliCoreHttpFBA()</strong></p></li>
+<li><p><strong>testOptArrowEcoliCoreHttpFBA</strong> (<em>endpoint</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.base.solvers.optarrow.testOptArrowQPBackend">
+<span class="sig-name descname"><span class="pre">testOptArrowQPBackend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/base/solvers/optarrow/testOptArrowQPBackend.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.base.solvers.optarrow.testOptArrowQPBackend" title="Permalink to this definition">¶</a></dt>
+<dd><p>testOptArrowQPBackend Minimal MATLAB smoke test for the COBRA OptArrow QP backend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>testOptArrowQPBackend()</strong></p>
 </dd>
 </dl>
 </dd></dl>
@@ -298,10 +357,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../install/index.html" class="btn btn-default float-right" title="Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../getSetSolver/index.html" class="btn btn-default float-right" title="Getsetsolver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../gams/index.html" class="btn btn-default" title="Gams" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../gurobi/index.html" class="btn btn-default" title="Gurobi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
