@@ -1,0 +1,637 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Rfastcormics &mdash; The COBRA Toolbox</title>
+  
+
+  
+  
+  
+  
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../../_static/img/favicon-32x32.png">
+  
+  
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../_static/img/favicon-16x16.png">
+  
+  
+  
+    <link rel="manifest" href="../../../../_static/json/manifest.json">
+  
+  
+    <meta name="msapplication-config" content="../../../../_static/browserconfig.xml">
+  
+  <meta name="theme-color" content="#ffffff">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="../../../../_static/js/jquery.easy-autocomplete.min.js" type="text/javascript" ></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href="../../../../_static/css/easy-autocomplete.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/cobra.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../../_static/css/cobra.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="The COBRA Toolbox" href="../../../../index.html"/>
+        <link rel="up" title="Transcriptomics" href="../index.html"/>
+        <link rel="next" title="Imat" href="../iMAT/index.html"/>
+        <link rel="prev" title="Moomin" href="../MOOMIN/index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> The COBRA Toolbox
+          
+
+          
+            <img src="/cobratoolbox/stable/_static/img/logo.png" class="logo" alt="cobratoolbox logo" />
+          
+          </a>
+
+              
+          <h1>The COBRA Toolbox</h1>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" id="simple"/>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+    <script>
+    	var options = {
+
+		url: "../../../../_static/json/functions.json",
+
+		getValue: "name",
+
+		list: {
+            onKeyEnterEvent: function(item) {
+                    return "_static/../" + item.website_url
+            },
+            maxNumberOfElements: 25,
+			match: {
+					enabled: true,
+			},
+            sort: {
+			    enabled: true
+		    }
+		},
+	template: {
+	    	type: "custom",
+		    method: function(value, item) {
+                return "<span><a href='../../../../_static/../" + item.website_url + "' >" + value + "</a>" + "<a href='../../../../_static/../" + item.website_url + "' ><img src='../../../../_static/link.svg'/></a></span>";
+		    }
+	    },
+		
+		theme: "square"
+
+	};
+
+	$("#simple").easyAutocomplete(options);
+
+
+    </script>
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Home</a></li>
+              </ul>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using the Toolbox</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Functions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../analysis/index.html">Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../base/index.html">Base</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Dataintegration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../metanetxMapper/index.html">Metanetxmapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../chemoInformatics/index.html">Chemoinformatics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../metaboAnnotator/index.html">Metaboannotator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fluxomics/index.html">Fluxomics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../XomicsToModel/index.html">Xomicstomodel</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Transcriptomics</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../preprocessing/index.html">Preprocessing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eFlux/index.html">Eflux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GIMME/index.html">Gimme</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MOOMIN/index.html">Moomin</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Rfastcormics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../iMAT/index.html">Imat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../FASTCORE/index.html">Fastcore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SWIFTCORE/index.html">Swiftcore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../MBA/index.html">Mba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../INIT/index.html">Init</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../metabotools/index.html">Metabotools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../design/index.html">Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reconstruction/index.html">Reconstruction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../visualization/index.html">Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../submodules/index.html">Submodules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing.html">How to contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../plan.html">Development Plan</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cite.html">How to cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../citations.html">Citations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../funding.html">Funding</a></li>
+</ul>
+
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">The COBRA Toolbox</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../contents.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Functions</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Dataintegration</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Transcriptomics</a></li>
+      <li class="breadcrumb-item active">Rfastcormics</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="https://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="rfastcormics">
+<span id="id1"></span><h1>Rfastcormics<a class="headerlink" href="#rfastcormics" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="module-src.dataIntegration.transcriptomics.rFASTCORMICS"></span><dl class="mat function">
+<dt class="sig sig-object mat" id="src.dataIntegration.transcriptomics.rFASTCORMICS.GPRrulesMapper">
+<span class="sig-name descname"><span class="pre">GPRrulesMapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">exp</span></em>, <em class="sig-param"><span class="pre">x</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/dataIntegration/transcriptomics/rFASTCORMICS/GPRrulesMapper.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.dataIntegration.transcriptomics.rFASTCORMICS.GPRrulesMapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate Gene-Protein-Reaction (GPR) rules by mapping gene expression
+values to reactions using logical operators</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>[res] = GPRrulesMapper</strong> (<em>exp, x</em>)</p>
+</dd>
+<dt class="field-even">INPUTS<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>exp</strong> – cell array with the expression to evaluate from the rules field</p></li>
+<li><p><strong>x</strong> – value to plug into the expression</p></li>
+</ul>
+</dd>
+<dt class="field-odd">OUTPUTS<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>res</strong> – the numeric value resulting from evaluating the expression</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.dataIntegration.transcriptomics.rFASTCORMICS.constrainModelOnMedium">
+<span class="sig-name descname"><span class="pre">constrainModelOnMedium</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">mediumMets</span></em>, <em class="sig-param"><span class="pre">notMediumConstrained</span></em>, <em class="sig-param"><span class="pre">biomassReaction</span></em>, <em class="sig-param"><span class="pre">functionToKeep</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/dataIntegration/transcriptomics/rFASTCORMICS/constrainModelOnMedium.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.dataIntegration.transcriptomics.rFASTCORMICS.constrainModelOnMedium" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constrain a metabolic model based on a defined medium by restricting the
+exchange reactions, while preserving essential functions</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>[model] = constrainModelOnMedium</strong> (<em>model, mediumMets, notMediumConstrained, biomassReaction, functionToKeep</em>)</p>
+</dd>
+<dt class="field-even">INPUTS<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>model</strong> – COBRA model structure with the following fields:</p>
+<ul>
+<li><p>.S - <cite>m x n</cite> stoichiometric matrix</p></li>
+<li><p>.lb - <cite>n x 1</cite> lower flux bounds</p></li>
+<li><p>.ub - <cite>n x 1</cite> upper flux bounds</p></li>
+<li><p>.rxns - <cite>n x 1</cite> cell array of reaction identifiers</p></li>
+</ul>
+</li>
+<li><p><strong>mediumMets</strong> – cell array of metabolites defining the growth medium</p></li>
+<li><p><strong>notMediumConstrained</strong> – list of reactions that should not be constrained by the medium</p></li>
+<li><p><strong>biomassReaction</strong> – reaction identifier of the biomass reaction to preserve</p></li>
+<li><p><strong>functionToKeep</strong> – list of reactions that must remain active</p></li>
+</ul>
+</dd>
+<dt class="field-odd">OUTPUTS<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> – constrained metabolic model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.dataIntegration.transcriptomics.rFASTCORMICS.createFitL">
+<span class="sig-name descname"><span class="pre">createFitL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">xi</span></em>, <em class="sig-param"><span class="pre">rest</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/dataIntegration/transcriptomics/rFASTCORMICS/createFitL.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.dataIntegration.transcriptomics.rFASTCORMICS.createFitL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Gaussian fit of the residual (left) curve used for FPKM discretization</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>[fitresult, gof] = createFitL</strong> (<em>xi, rest</em>)</p>
+</dd>
+<dt class="field-even">INPUTS<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>xi</strong> – x values (log2(FPKM) grid) for the fit</p></li>
+<li><p><strong>rest</strong> – y values (residual density) to fit</p></li>
+</ul>
+</dd>
+<dt class="field-odd">OUTPUTS<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fitresult</strong> – a <cite>cfit</cite> object representing the Gaussian fit</p></li>
+<li><p><strong>gof</strong> – structure with goodness-of-fit information</p></li>
+</ul>
+</dd>
+</dl>
+<p>See also: FIT, CFIT, SFIT</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.dataIntegration.transcriptomics.rFASTCORMICS.createFitR">
+<span class="sig-name descname"><span class="pre">createFitR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">hybrid_curve</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/dataIntegration/transcriptomics/rFASTCORMICS/createFitR.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.dataIntegration.transcriptomics.rFASTCORMICS.createFitR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Gaussian fit of the hybrid (right) curve used for FPKM discretization</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>[fitresult, gof] = createFitR</strong> (<em>x, hybrid_curve</em>)</p>
+</dd>
+<dt class="field-even">INPUTS<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>x</strong> – x values (log2(FPKM) grid) for the fit</p></li>
+<li><p><strong>hybrid_curve</strong> – y values (hybrid density curve) to fit</p></li>
+</ul>
+</dd>
+<dt class="field-odd">OUTPUTS<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fitresult</strong> – a <cite>cfit</cite> object representing the Gaussian fit</p></li>
+<li><p><strong>gof</strong> – structure with goodness-of-fit information</p></li>
+</ul>
+</dd>
+</dl>
+<p>See also: FIT, CFIT, SFIT</p>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.dataIntegration.transcriptomics.rFASTCORMICS.discretizeFPKM">
+<span class="sig-name descname"><span class="pre">discretizeFPKM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">fpkm</span></em>, <em class="sig-param"><span class="pre">colnames</span></em>, <em class="sig-param"><span class="pre">figflag</span></em>, <em class="sig-param"><span class="pre">pathFigures</span></em>, <em class="sig-param"><span class="pre">fileFormat</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/dataIntegration/transcriptomics/rFASTCORMICS/discretizeFPKM.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.dataIntegration.transcriptomics.rFASTCORMICS.discretizeFPKM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discretize gene expression data (FPKM values) into three categories,
+expressed, not expressed, and unknown, based on a zFPKM transformation
+and half-Gaussian density fitting</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>[discretized, scaledExpression] = discretizeFPKM</strong> (<em>fpkm, colnames, figflag, pathFigures, fileFormat</em>)</p>
+</dd>
+<dt class="field-even">INPUTS<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>fpkm</strong> – <cite>m x n</cite> matrix or table of FPKM expression values (genes x samples)</p></li>
+<li><p><strong>colnames</strong> – <cite>1 x n</cite> cell array of sample names</p></li>
+</ul>
+</dd>
+<dt class="field-odd">OPTIONAL INPUTS<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>figflag</strong> – flag to plot and save figures (default: 0)</p></li>
+<li><p><strong>pathFigures</strong> – path to save the figures (default: current folder)</p></li>
+<li><p><strong>fileFormat</strong> – file format used to store the figures (default: ‘.png’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">OUTPUTS<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>discretized</strong> – <cite>m x n</cite> matrix of discretized values:</p>
+<ul>
+<li><p>1 - expressed</p></li>
+<li><p>0 - unknown</p></li>
+<li><p>-1 - not expressed</p></li>
+</ul>
+</li>
+<li><p><strong>scaledExpression</strong> – scaled data after the zFPKM transformation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.dataIntegration.transcriptomics.rFASTCORMICS.findOrganicExRxns">
+<span class="sig-name descname"><span class="pre">findOrganicExRxns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">biomassReaction</span></em>, <em class="sig-param"><span class="pre">functionToKeep</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/dataIntegration/transcriptomics/rFASTCORMICS/findOrganicExRxns.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.dataIntegration.transcriptomics.rFASTCORMICS.findOrganicExRxns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify the exchange reactions that are carbon sources, excluding the
+biomass reaction, the reactions supplying the medium, and the reactions
+listed in the functionToKeep input</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>[exOrgaRxns, ExOrgaInd] = findOrganicExRxns</strong> (<em>model, biomassReaction, functionToKeep</em>)</p>
+</dd>
+<dt class="field-even">INPUTS<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>model</strong> – COBRA model structure with the following fields:</p>
+<ul>
+<li><p>.S - <cite>m x n</cite> stoichiometric matrix</p></li>
+<li><p>.rxns - <cite>n x 1</cite> cell array of reaction identifiers</p></li>
+<li><p>.mets - <cite>m x 1</cite> cell array of metabolite identifiers</p></li>
+<li><p>.metFormulas - <cite>m x 1</cite> cell array of metabolite chemical formulas</p></li>
+</ul>
+</li>
+<li><p><strong>biomassReaction</strong> – reaction identifier of the biomass reaction to exclude from constraining</p></li>
+<li><p><strong>functionToKeep</strong> – cell array of reaction identifiers to keep unconstrained</p></li>
+</ul>
+</dd>
+<dt class="field-odd">OUTPUTS<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exOrgaRxns</strong> – cell array of the candidate exchange reaction identifiers (biomass and functionToKeep reactions excluded)</p></li>
+<li><p><strong>ExOrgaInd</strong> – indices of the organic exchange reactions among the candidates</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.dataIntegration.transcriptomics.rFASTCORMICS.fixIrr">
+<span class="sig-name descname"><span class="pre">fixIrr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/dataIntegration/transcriptomics/rFASTCORMICS/fixIrr.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.dataIntegration.transcriptomics.rFASTCORMICS.fixIrr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert irreversible backward reactions into irreversible forward reactions</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>[model] = fixIrr</strong> (<em>model</em>)</p>
+</dd>
+<dt class="field-even">INPUTS<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>model</strong> – COBRA model structure with the following fields:</p>
+<ul class="simple">
+<li><p>.S - <cite>m x n</cite> stoichiometric matrix</p></li>
+<li><p>.lb - <cite>n x 1</cite> lower flux bounds</p></li>
+<li><p>.ub - <cite>n x 1</cite> upper flux bounds</p></li>
+<li><p>.rxns - <cite>n x 1</cite> cell array of reaction abbreviations</p></li>
+</ul>
+</dd>
+<dt class="field-odd">OUTPUTS<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> – model with corrected reversibilities, with fields:</p>
+<ul class="simple">
+<li><p>.rev - <cite>n x 1</cite> reaction reversibility indicator (1 reversible, 0 irreversible)</p></li>
+<li><p>.lb - updated <cite>n x 1</cite> lower flux bounds</p></li>
+<li><p>.ub - updated <cite>n x 1</cite> upper flux bounds</p></li>
+<li><p>.S - stoichiometric matrix with backward reactions flipped to forward</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.dataIntegration.transcriptomics.rFASTCORMICS.mapExpressionToModel">
+<span class="sig-name descname"><span class="pre">mapExpressionToModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">data</span></em>, <em class="sig-param"><span class="pre">dico</span></em>, <em class="sig-param"><span class="pre">rownames</span></em>, <em class="sig-param"><span class="pre">processTranscripts</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/dataIntegration/transcriptomics/rFASTCORMICS/mapExpressionToModel.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.dataIntegration.transcriptomics.rFASTCORMICS.mapExpressionToModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map the expression data to a model following the GPR rules
+(Pacheco et al., 2019)</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>[mapping] = mapExpressionToModel</strong> (<em>model, data, dico, rownames, processTranscripts</em>)</p>
+</dd>
+<dt class="field-even">INPUTS<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>model</strong> – COBRA model structure with the following fields:</p>
+<ul>
+<li><p>.rxns - <cite>n x 1</cite> cell array of reaction abbreviations</p></li>
+<li><p>.genes - cell array of gene identifiers</p></li>
+<li><p>.rules - cell array of GPR rules in <cite>x(i)</cite> logical form</p></li>
+</ul>
+</li>
+<li><p><strong>data</strong> – expression or discretized values for the samples, size(data, 1) is the
+number of gene IDs and size(data, 2) is the number of samples</p></li>
+<li><p><strong>dico</strong> – table with corresponding gene identifier information, used to map the
+gene IDs to the genes in the model; can contain multiple columns with
+different identifiers</p></li>
+<li><p><strong>rownames</strong> – cell array with the gene IDs</p></li>
+</ul>
+</dd>
+<dt class="field-odd">OPTIONAL INPUTS<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>processTranscripts</strong> – 0 for inactive (default), 1 for active - if active, consider gene names
+of the model without any numbers after a “.”</p>
+</dd>
+<dt class="field-even">OUTPUTS<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>mapping</strong> – matrix of the expression values mapped to the reactions according to the
+GPR rules, size(mapping, 1) equals the number of reactions and
+size(mapping, 2) equals size(data, 2)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function">
+<dt class="sig sig-object mat" id="src.dataIntegration.transcriptomics.rFASTCORMICS.rFastcormics">
+<span class="sig-name descname"><span class="pre">rFastcormics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">discretized</span></em>, <em class="sig-param"><span class="pre">rownames</span></em>, <em class="sig-param"><span class="pre">dico</span></em>, <em class="sig-param"><span class="pre">biomassReactionName</span></em>, <em class="sig-param"><span class="pre">consensusProportion</span></em>, <em class="sig-param"><span class="pre">epsilon</span></em>, <em class="sig-param"><span class="pre">optionalSettings</span></em>, <em class="sig-param"><span class="pre">fillingMediumFlag</span></em>, <em class="sig-param"><span class="pre">adaptiveScalingFlag</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/opencobra/cobratoolbox/blob/master/src/dataIntegration/transcriptomics/rFASTCORMICS/rFastcormics.m"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.dataIntegration.transcriptomics.rFASTCORMICS.rFastcormics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconstruct a context-specific model (tissue, cell type, or any context)
+from RNAseq data and a generic reconstruction using the rFASTCORMICS
+algorithm (Pacheco et al. 2019)</p>
+<dl class="field-list simple">
+<dt class="field-odd">USAGE<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>[contextSpecificModel, retainedRxns, indicesCompletedCoreOrig] = rFastcormics</strong> (<em>model, discretized, rownames, dico, biomassReactionName, consensusProportion, epsilon, optionalSettings, fillingMediumFlag, adaptiveScalingFlag</em>)</p>
+</dd>
+</dl>
+<p>REQUIREMENTS:</p>
+<blockquote>
+<div><p>Statistics and Machine Learning Toolbox, and Curve Fitting Toolbox</p>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">INPUTS<span class="colon">:</span></dt>
+<dd class="field-odd"><ul>
+<li><p><strong>model</strong> – COBRA model structure with the following fields:</p>
+<ul class="simple">
+<li><p>.S - <cite>m x n</cite> stoichiometric matrix</p></li>
+<li><p>.lb - <cite>n x 1</cite> lower flux bounds</p></li>
+<li><p>.ub - <cite>n x 1</cite> upper flux bounds</p></li>
+<li><p>.rxns - <cite>n x 1</cite> cell array of reaction abbreviations</p></li>
+<li><p>.rules - cell array of GPR rules in <cite>x(i)</cite> logical form</p></li>
+<li><p>.subSystems - reaction subsystem assignments</p></li>
+<li><p>.metFormulas - <cite>m x 1</cite> cell array of metabolite chemical formulas</p></li>
+</ul>
+</li>
+<li><p><strong>discretized</strong> – discretized expression values, size(discretized, 1) is the number of
+genes and size(discretized, 2) is the number of samples</p></li>
+<li><p><strong>rownames</strong> – cell array with the gene IDs</p></li>
+<li><p><strong>dico</strong> – table with gene identifier information used to map the rownames to the
+model genes; can contain multiple columns with different identifiers:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>.Properties - table metadata; the VariableNames identify the column
+that matches the gene IDs</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>biomassReactionName</strong> – reaction identifier of the objective (biomass) reaction</p></li>
+</ul>
+</dd>
+<dt class="field-even">OPTIONAL INPUTS<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>consensusProportion</strong> – rate of samples that must (not) express a gene for it to be considered
+(not) expressed in the context of interest (default 0.9)</p></li>
+<li><p><strong>epsilon</strong> – smallest flux considered nonzero (default 1e-4)</p></li>
+<li><p><strong>optionalSettings</strong> – structure with optional constraints:</p>
+<ul>
+<li><p>.func - cell array of reaction abbreviations that should carry a flux</p></li>
+<li><p>.medium - cell array of metabolite abbreviations defining the growth medium</p></li>
+<li><p>.notMediumConstrained - reaction abbreviations not in the medium that must be retained</p></li>
+</ul>
+</li>
+<li><p><strong>fillingMediumFlag</strong> – fill the medium with supplementary reactions when the provided medium is
+not sufficient to fulfill the objective; 1 for active (default), 0 for inactive</p></li>
+<li><p><strong>adaptiveScalingFlag</strong> – adaptive scaling of the flux values (see LP10); 0 for inactive (default),
+1 for active</p></li>
+</ul>
+</dd>
+<dt class="field-odd">OUTPUTS<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>contextSpecificModel</strong> – context-specific model, reduced to the retained reactions and associated genes</p></li>
+<li><p><strong>retainedRxns</strong> – indices of the retained reactions in the input model</p></li>
+<li><p><strong>indicesCompletedCoreOrig</strong> – indices of the core reactions in the input model</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>[contextSpecificModel, retainedRxns, indicesCompletedCoreOrig] = rFastcormics(model, discretized, rownames, dico, biomassReactionName)</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../iMAT/index.html" class="btn btn-default float-right" title="Imat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../MOOMIN/index.html" class="btn btn-default" title="Moomin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2026, The COBRA Toolbox developers.
+
+    </p>
+  </div>
+  Built with Sphinx using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'2.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+    <script type="text/javascript" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/sphinx_highlight.js"></script>
+
+  
+
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRCMZL1FKK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TRCMZL1FKK');
+  </script>
+    
+</body>
+</html>
